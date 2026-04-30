@@ -85,22 +85,16 @@ class GranularSleepStager:
         
         # Step 2: 带约束的 Viterbi 平滑
         stages = np.array([STAGES[np.argmax(smoothed[i])] for i in range(n)])
+        confidences = np.array([np.max(smoothed[i]) for i in range(n)])
         
-        # 正向传递：转移约束
+        # 转移约束（保留模式：仅低置信时修正）
         for i in range(1, n):
             prev = stages[i-1]
-            allowed = VALID_TRANSITIONS.get(prev, [])
-            # 如果当前阶段不合法且信度低
-            if stages[i] not in allowed + [prev]:
+            # 只在低置信度时做约束修正
+            if confidences[i] < 0.5 and stages[i] not in VALID_TRANSITIONS.get(prev, [stages[i]]):
                 probs_i = smoothed[i].copy()
-                # 禁止阶段压到0
-                for si, s in enumerate(STAGES):
-                    if s == prev: continue  # 允许保持
-                    if s not in allowed:
-                        probs_i[si] *= 0.01
+                probs_i[STAGES.index(stages[i])] = 0  # 淘汰非法阶段
                 stages[i] = STAGES[np.argmax(probs_i)]
-        
-        confidences = np.array([np.max(smoothed[i]) for i in range(n)])
         
         # Step 3: 信息粒构建
         granules = self._build_granules(stages, confidences, min_granule_epochs)
