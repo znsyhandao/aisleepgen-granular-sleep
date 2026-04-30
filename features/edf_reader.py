@@ -104,7 +104,6 @@ class EDFReader:
     
     def _read_signal_data(self, f):
         """读取所有记录（数据块）"""
-        total_samples_per_signal = [0] * self.n_signals
         all_data = [[] for _ in range(self.n_signals)]
         
         for record_idx in range(self.n_records if self.n_records > 0 else 1):
@@ -112,7 +111,16 @@ class EDFReader:
                 n = self.n_samples_per_record[sig_idx]
                 raw_bytes = f.read(n * 2)  # 每个样本2字节 (16-bit integer)
                 if len(raw_bytes) < n * 2:
+                    # 不完整记录，跳过
                     break
+                
+                # 检查是否为注释信号（标签含"EDF Annotations"）
+                label = self.labels[sig_idx].lower() if sig_idx < len(self.labels) else ''
+                if 'annotation' in label or 'edf annotations'.lower() in label:
+                    # 注释信号：TAL (Timestamped Annotation List) 格式
+                    # 跳过解析，保存原始字节
+                    all_data[sig_idx].append(np.array([0.0]))
+                    continue
                 
                 # 解析数字信号
                 dig_data = np.frombuffer(raw_bytes, dtype=np.int16)
@@ -131,8 +139,14 @@ class EDFReader:
                 all_data[sig_idx].append(phys_data)
         
         # 构建信号对象
+        valid_signals = []
         for sig_idx in range(self.n_signals):
-            data = np.concatenate(all_data[sig_idx])
+            if not all_data[sig_idx]:
+                continue
+            try:
+                data = np.concatenate(all_data[sig_idx])
+            except:
+                data = np.array(all_data[sig_idx][0])
             sfreq = self.n_samples_per_record[sig_idx] / self.record_duration if self.record_duration > 0 else 1.0
             
             sig = EDFSignal(
@@ -144,7 +158,9 @@ class EDFReader:
                 digital_min=self.digital_mins[sig_idx],
                 digital_max=self.digital_maxs[sig_idx],
             )
-            self.signals.append(sig)
+            valid_signals.append(sig)
+        
+        self.signals = valid_signals
     
     def get_signal(self, name_substring: str) -> Optional[EDFSignal]:
         """通过名称子串获取信号"""

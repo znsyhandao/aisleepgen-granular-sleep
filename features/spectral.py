@@ -44,7 +44,7 @@ def band_power(freqs: np.ndarray, psd: np.ndarray, band: Tuple[float, float]) ->
     mask = (freqs >= band[0]) & (freqs <= band[1])
     if not mask.any():
         return 0.0
-    return float(np.trapz(psd[mask], freqs[mask]))
+    return float(np.trapezoid(psd[mask], freqs[mask]))
 
 
 def extract_epoch_features(data: np.ndarray, sfreq: float) -> Dict[str, float]:
