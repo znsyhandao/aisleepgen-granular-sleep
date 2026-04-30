@@ -100,18 +100,6 @@ class GranularSleepStager:
                         probs_i[si] *= 0.01
                 stages[i] = STAGES[np.argmax(probs_i)]
         
-        # 反向传递：同理
-        for i in range(n-2, -1, -1):
-            next_s = stages[i+1]
-            allowed = VALID_TRANSITIONS.get(next_s, [])
-            if stages[i] not in allowed + [next_s]:
-                probs_i = smoothed[i].copy()
-                for si, s in enumerate(STAGES):
-                    if s == next_s: continue
-                    if s not in allowed:
-                        probs_i[si] *= 0.01
-                stages[i] = STAGES[np.argmax(probs_i)]
-        
         confidences = np.array([np.max(smoothed[i]) for i in range(n)])
         
         # Step 3: 信息粒构建
