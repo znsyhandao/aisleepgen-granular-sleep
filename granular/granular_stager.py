@@ -76,25 +76,26 @@ class GranularSleepStager:
         probs = self.predict_proba(X)
         n = len(probs)
         
-        # Step 1: 平滑
+        # Step 1: 平滑（保留模式：只对低置信区做修正）
         smoothed = probs.copy()
         if smooth_window > 1:
             kernel = np.ones(smooth_window) / smooth_window
             for si in range(len(STAGES)):
                 smoothed[:, si] = np.convolve(probs[:, si], kernel, mode='same')
         
-        # Step 2: 带约束的 Viterbi 平滑
-        stages = np.array([STAGES[np.argmax(smoothed[i])] for i in range(n)])
-        confidences = np.array([np.max(smoothed[i]) for i in range(n)])
+        # Step 2: 保留原始预测作为base，只对低置信区做平滑修正
+        base_stages = np.array([STAGES[np.argmax(probs[i])] for i in range(n)])
+        base_conf = np.array([np.max(probs[i]) for i in range(n)])
         
-        # 转移约束（保留模式：仅低置信时修正）
-        for i in range(1, n):
-            prev = stages[i-1]
-            # 只在低置信度时做约束修正
-            if confidences[i] < 0.5 and stages[i] not in VALID_TRANSITIONS.get(prev, [stages[i]]):
-                probs_i = smoothed[i].copy()
-                probs_i[STAGES.index(stages[i])] = 0  # 淘汰非法阶段
-                stages[i] = STAGES[np.argmax(probs_i)]
+        stages = base_stages.copy()
+        confidences = base_conf.copy()
+        
+        # 只对低于阈值的区域做平滑
+        LOW_CONF = 0.5
+        for i in range(n):
+            if base_conf[i] < LOW_CONF:
+                stages[i] = STAGES[np.argmax(smoothed[i])]
+                confidences[i] = np.max(smoothed[i])
         
         # Step 3: 信息粒构建
         granules = self._build_granules(stages, confidences, min_granule_epochs)
