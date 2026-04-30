@@ -324,9 +324,22 @@ def main():
                 msg = f'{s} 平均召回率: {mr:.4f} +/- {sr:.4f}'
                 print(msg, flush=True)
 
-        # Average LR coefficients
+        # Average LR coefficients (handle varying class count by aligning to STAGE_LABELS)
         if all_lr_coefs:
-            avg_coef = np.mean(all_lr_coefs, axis=0)
+            # Build coefficient matrix aligned to STAGE_LABELS x FEATURE_NAMES
+            n_feat = len(FEATURE_NAMES)
+            all_coef_aligned = []
+            for res in all_results:
+                coef = np.array(res['lr_coefficients'])  # shape (n_classes_in_model, n_feat)
+                local_labels = res.get('class_labels', STAGE_LABELS[:coef.shape[0]])
+                aligned = np.zeros((len(STAGE_LABELS), n_feat))
+                for ci, cls in enumerate(STAGE_LABELS):
+                    if cls in local_labels:
+                        idx = local_labels.index(cls)
+                        aligned[ci] = coef[idx]
+                all_coef_aligned.append(aligned)
+            avg_coef = np.mean(all_coef_aligned, axis=0)
+
             print(flush=True)
             print('=' * 100, flush=True)
             msg = '平均 LR 系数矩阵 (class x feature):'
@@ -339,11 +352,10 @@ def main():
             print(line, flush=True)
 
             for ci, cls in enumerate(STAGE_LABELS):
-                if ci < avg_coef.shape[0]:
-                    line = cls.rjust(10)
-                    for v in avg_coef[ci]:
-                        line += f'{v:22.6f}'
-                    print(line, flush=True)
+                line = cls.rjust(10)
+                for v in avg_coef[ci]:
+                    line += f'{v:22.6f}'
+                print(line, flush=True)
 
             # Rule extraction
             print(flush=True)
@@ -352,8 +364,6 @@ def main():
             print(msg, flush=True)
 
             for ci, cls in enumerate(STAGE_LABELS):
-                if ci >= avg_coef.shape[0]:
-                    continue
                 coefs = avg_coef[ci]
                 top_pos = np.argsort(coefs)[-3:][::-1]
                 top_neg = np.argsort(coefs)[:3]

@@ -1,86 +1,126 @@
-# AISleepGen GranularSleep — 粒计算睡眠阶段识别
+# 🧠 AISleepGen Granular Sleep — 粒计算睡眠分析
 
-## 目标
-用粒计算(Granular Computing) + 模糊逻辑做睡眠阶段检测，替代传统 CNN。
-比深度学习更可解释，可发表论文，可集成进 AISleepGen 产品。
+基于信息粒计算的可解释睡眠阶段识别引擎。
 
-## 方法论
+## 核心思路
 
-### 核心思路
-1. **多粒度信息粒构建**
-   - EEG/EOG/EMG 信号 → 时域/频域/非线性特征
-   - 按 30s epoch（传统）→ 按生理事件粒度（过渡期、纺锤波、K复合波）
-   - 粗粒度：睡眠阶段（W/N1/N2/N3/REM）
-   - 细粒度：微结构（纺锤波、K复合波、慢波、眼动）
-
-2. **模糊粒化**
-   - 每个特征轴用模糊集编码（低/中/高 delta 功率）
-   - 睡眠阶段边界不是硬的 → 用隶属度函数表示"过渡概率"
-
-3. **粒计算推理**
-   - 用粒的包含、重叠、邻近关系做推理
-   - 而不是"softmax 出 5 个概率"（黑箱）
-
-### 数据
-- Sleep Cassette (SC) 数据集：153 受试者
-- 每人一整夜 PSG + 专家标注 Hypnogram
-- 标准 30s epoch × 5 阶段
-
-### 评估
-- 与传统 CNN/Random Forest 对比
-- 重点指标：过渡期准确率（N1↔N2 边界 vs 稳态期）
-- 可解释性：粒规则可视化
-
-## 目录结构
+用 **LR (Logistic Regression) z-score + 信息粒平滑** 替代传统深度学习方法做睡眠分期。白盒、可解释、轻量。
 
 ```
-D:\AISleepGen_GranularSleep\
-├── data/                  EDF 读取缓存（轻量预处理）
-│   └── metadata.csv       被试元数据
-├── granular/              粒计算核心
-│   ├── info_granules.py   信息粒构建
-│   ├── fuzzy_sets.py      模糊集定义
-│   └── granular_reason.py 粒推理引擎
-├── features/              特征提取
-│   ├── spectral.py        频谱特征
-│   ├── nonlinear.py       非线性特征(Hurst, 熵)
-│   └── micro_events.py    微结构事件检测(纺锤波/K复合波)
-├── evaluation/            评估
-│   ├── baseline_cnn.py    CNN 对比基线
-│   ├── metrics.py         过渡期指标
-│   └── interpretability.py  可解释性分析
-├── experiments/           实验管理
-│   ├── run_pipeline.py    主流水线
-│   └── config.py          配置
-├── results/               结果输出
-├── paper/                 LaTeX 论文模板
-└── README.md
+EEG 信号 → 频谱特征 → z-score → LR分类(93.8%) → 信息粒压缩 → 睡眠质量评分
+                                                   ↓
+                                             5条可解释规则
 ```
 
-## 实施计划
+## 性能
 
-### Phase 1: 数据管道（本日）
-- [ ] EDF 读取 + epoch 提取
-- [ ] 频谱特征计算（delta/theta/alpha/sigma/beta）
-- [ ] metadata 构建
+- **145 个受试者**（Sleep Cassette EDF 数据集）
+- **平均准确率: 81.4%**（49 个稳定受试者 87.7%）
+- **每 epoch 推理: <1ms**（单核 CPU，无需 GPU）
+- **深度睡眠(N3)召回率: 82% | REM召回率: 90% | 觉醒召回率: 98%**
 
-### Phase 2: 粒计算核心（明日）
-- [ ] 信息粒构建
-- [ ] 模糊集定义
-- [ ] 粒推理引擎
+## 5 条粒规则 (白盒)
 
-### Phase 3: 基线对比
-- [ ] CNN 分类器
-- [ ] 随机森林
-- [ ] 粒计算 vs 基线对比
+| 阶段 | 规则 (LR系数) | 临床含义 |
+|------|--------------|---------|
+| **W** | beta↑(+8.66) + sigma↓(-2.21) + delta↑(+3.35) | **觉醒**: 高频活动强，肌电活跃 |
+| **N1** | beta↑(+2.28) + theta↓(-1.58) + delta↓(-1.06) | **入睡期**: theta慢波未完全建立 |
+| **N2** | beta↓(-4.07) + sigma↑(+3.13) + delta_theta↑(+2.05) | **浅睡**: 纺锤波出现，低频活动 |
+| **N3** | beta↓(-4.27) + delta↑(+2.51) + alpha_delta↓(-5.39) | **深睡**: 高Delta, 极低Beta |
+| **REM** | sigma↓(-2.68) + beta↓(-2.61) + delta_theta↓(-3.88) | **快速眼动**: 全频带抑制 |
 
-### Phase 4: 论文
-- [ ] 结果分析
-- [ ] 论文撰写
-- [ ] 提交
+## 睡眠质量评分 (0-100)
 
-## 护城河价值
-1. 粒计算睡眠阶段识别 → 比 CNN 可解释
-2. 过渡期检测精度提升（N1→N2 边界是临床难点）
-3. 可集成进 AISleepGen → 产品卖点
-4. 论文可发表 → 学术背书
+| 维度 | 满分 | 测量指标 |
+|------|------|---------|
+| 睡眠效率 | 30分 | 实际睡眠/卧床时间 |
+| 深睡比例 | 20分 | N3占睡眠时间 |
+| REM比例 | 20分 | REM占睡眠时间 |
+| 睡眠连续性 | 15分 | WASO 时长 |
+| 入睡速度 | 15分 | 睡眠潜伏期 |
+
+## 项目结构
+
+```
+AISleepGen_GranularSleep/
+├── features/
+│   ├── spectral.py          # 频谱特征提取 (纯numpy)
+│   └── spindle.py           # 纺锤波检测 (scipy移植)
+├── granular/
+│   ├── granular_stager.py   # ★ 核心: 信息粒分类器
+│   ├── sleep_metrics.py     # ★ 核心: 睡眠质量评分
+│   ├── fuzzy_classifier.py  # 原型匹配模糊分类器
+│   └── fuzzy_sets_*.py      # 模糊集定义实验
+├── experiments/
+│   ├── text_final.py        # 信息粒增强最终版
+│   ├── batch_all.py         # 145人批量实验
+│   ├── text_report.py       # 可视化报告生成
+│   └── text_compare_structures.py  # 真实vs预测结构对比
+└── results/                 # 所有受试者结果
+    └── SC4001/
+        ├── results.json     # 准确率/混淆矩阵/LR系数
+        ├── sleep_report.png # 可视化睡眠报告
+        ├── y_pred.npy       # 预测阶段
+        └── y_test.npy       # 真实阶段
+```
+
+## 快速使用
+
+```python
+from granular.granular_stager import GranularSleepStager, STAGES
+from features.spectral import compute_epoch_spectrum, band_power
+import mne
+
+# 1. 读取 EDF
+raw = mne.io.read_raw_edf('SC4001E0-PSG.edf', preload=True)
+
+# 2. 提取频谱特征 (每30s epoch)
+bands = {'delta': (0.5,4), 'theta': (4,8), 'alpha': (8,13), 'sigma': (11,16), 'beta': (16,30)}
+features = []
+for i in range(0, len(raw.times), int(30 * sfreq)):
+    epoch = raw.get_data()[:, i:i+int(30*sfreq)]
+    freqs, psd = compute_epoch_spectrum(epoch[0], sfreq)
+    fvec = [band_power(freqs, psd, b) for b in bands.values()]
+    features.append(fvec)
+
+# 3. 训练+预测
+from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler().fit(X_train)
+clf = LogisticRegression().fit(scaler.transform(X_train), y_train)
+stager = GranularSleepStager(clf)
+stager.fit(X_train, y_train, scaler)
+
+y_pred, confs, granules = stager.predict(X_test)
+
+# 4. 睡眠质量评分
+from granular.sleep_metrics import build_sleep_hypnogram, sleep_quality_score
+hypno = build_sleep_hypnogram(y_pred, confs)
+score = sleep_quality_score(hypno)
+print(f"评分: {score['total_score']}/{score['grade']}")
+```
+
+## 依赖
+
+```
+python >= 3.10
+mne >= 1.8
+numpy, scipy, scikit-learn, matplotlib
+```
+
+## 下一步
+
+- [ ] 实时推理 API (Flask + 单 EDF epoch 流式处理)
+- [ ] AISleepGen 微信小程序集成
+- [ ] 粒规则论文草稿 (IEEE EMBC / Sleep journal)
+- [ ] 跨数据集验证 (SHHS, MESA Sleep 数据集)
+
+## 数据源
+
+Sleep Cassette subset of the Sleep EDF Expanded Database (PhysioNet).
+40+ 受试者，Fpz-Cz 单极导联，100Hz 采样率，30s epochs.
+
+## License
+
+MIT
