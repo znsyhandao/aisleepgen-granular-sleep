@@ -1,0 +1,5780 @@
+{
+  "male": {
+    "sleep_min": 424.5,
+    "wake_min": 55.5,
+    "efficiency": 88.4
+  },
+  "female": {
+    "sleep_min": 438.5,
+    "wake_min": 41.5,
+    "efficiency": 91.4
+  },
+  "agreement": {
+    "both_sleep_min": 386.0,
+    "both_wake_min": 3.0,
+    "m_sleep_f_wake_min": 38.5,
+    "m_wake_f_sleep_min": 52.5
+  },
+  "timeline": [
+    {
+      "epoch": 0,
+      "time": "00:00",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 1,
+      "time": "00:00",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 2,
+      "time": "00:01",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 3,
+      "time": "00:01",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 4,
+      "time": "00:02",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 5,
+      "time": "00:02",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 6,
+      "time": "00:03",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 7,
+      "time": "00:03",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 8,
+      "time": "00:04",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 9,
+      "time": "00:04",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 10,
+      "time": "00:05",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 11,
+      "time": "00:05",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 12,
+      "time": "00:06",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 13,
+      "time": "00:06",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 14,
+      "time": "00:07",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 15,
+      "time": "00:07",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 16,
+      "time": "00:08",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 17,
+      "time": "00:08",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 18,
+      "time": "00:09",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 19,
+      "time": "00:09",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 20,
+      "time": "00:10",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 21,
+      "time": "00:10",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 22,
+      "time": "00:11",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 23,
+      "time": "00:11",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 24,
+      "time": "00:12",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 25,
+      "time": "00:12",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 26,
+      "time": "00:13",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 27,
+      "time": "00:13",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 28,
+      "time": "00:14",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 29,
+      "time": "00:14",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 30,
+      "time": "00:15",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 31,
+      "time": "00:15",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 32,
+      "time": "00:16",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 33,
+      "time": "00:16",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 34,
+      "time": "00:17",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 35,
+      "time": "00:17",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 36,
+      "time": "00:18",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 37,
+      "time": "00:18",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 38,
+      "time": "00:19",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 39,
+      "time": "00:19",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 40,
+      "time": "00:20",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 41,
+      "time": "00:20",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 42,
+      "time": "00:21",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 43,
+      "time": "00:21",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 44,
+      "time": "00:22",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 45,
+      "time": "00:22",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 46,
+      "time": "00:23",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 47,
+      "time": "00:23",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 48,
+      "time": "00:24",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 49,
+      "time": "00:24",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 50,
+      "time": "00:25",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 51,
+      "time": "00:25",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 52,
+      "time": "00:26",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 53,
+      "time": "00:26",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 54,
+      "time": "00:27",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 55,
+      "time": "00:27",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 56,
+      "time": "00:28",
+      "male": "��",
+      "female": "��"
+    },
+    {
+      "epoch": 57,
+      "time": "00:28",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 58,
+      "time": "00:29",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 59,
+      "time": "00:29",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 60,
+      "time": "00:30",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 61,
+      "time": "00:30",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 62,
+      "time": "00:31",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 63,
+      "time": "00:31",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 64,
+      "time": "00:32",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 65,
+      "time": "00:32",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 66,
+      "time": "00:33",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 67,
+      "time": "00:33",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 68,
+      "time": "00:34",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 69,
+      "time": "00:34",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 70,
+      "time": "00:35",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 71,
+      "time": "00:35",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 72,
+      "time": "00:36",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 73,
+      "time": "00:36",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 74,
+      "time": "00:37",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 75,
+      "time": "00:37",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 76,
+      "time": "00:38",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 77,
+      "time": "00:38",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 78,
+      "time": "00:39",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 79,
+      "time": "00:39",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 80,
+      "time": "00:40",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 81,
+      "time": "00:40",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 82,
+      "time": "00:41",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 83,
+      "time": "00:41",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 84,
+      "time": "00:42",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 85,
+      "time": "00:42",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 86,
+      "time": "00:43",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 87,
+      "time": "00:43",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 88,
+      "time": "00:44",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 89,
+      "time": "00:44",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 90,
+      "time": "00:45",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 91,
+      "time": "00:45",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 92,
+      "time": "00:46",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 93,
+      "time": "00:46",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 94,
+      "time": "00:47",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 95,
+      "time": "00:47",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 96,
+      "time": "00:48",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 97,
+      "time": "00:48",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 98,
+      "time": "00:49",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 99,
+      "time": "00:49",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 100,
+      "time": "00:50",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 101,
+      "time": "00:50",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 102,
+      "time": "00:51",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 103,
+      "time": "00:51",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 104,
+      "time": "00:52",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 105,
+      "time": "00:52",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 106,
+      "time": "00:53",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 107,
+      "time": "00:53",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 108,
+      "time": "00:54",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 109,
+      "time": "00:54",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 110,
+      "time": "00:55",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 111,
+      "time": "00:55",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 112,
+      "time": "00:56",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 113,
+      "time": "00:56",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 114,
+      "time": "00:57",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 115,
+      "time": "00:57",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 116,
+      "time": "00:58",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 117,
+      "time": "00:58",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 118,
+      "time": "00:59",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 119,
+      "time": "00:59",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 120,
+      "time": "01:00",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 121,
+      "time": "01:00",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 122,
+      "time": "01:01",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 123,
+      "time": "01:01",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 124,
+      "time": "01:02",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 125,
+      "time": "01:02",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 126,
+      "time": "01:03",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 127,
+      "time": "01:03",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 128,
+      "time": "01:04",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 129,
+      "time": "01:04",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 130,
+      "time": "01:05",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 131,
+      "time": "01:05",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 132,
+      "time": "01:06",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 133,
+      "time": "01:06",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 134,
+      "time": "01:07",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 135,
+      "time": "01:07",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 136,
+      "time": "01:08",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 137,
+      "time": "01:08",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 138,
+      "time": "01:09",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 139,
+      "time": "01:09",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 140,
+      "time": "01:10",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 141,
+      "time": "01:10",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 142,
+      "time": "01:11",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 143,
+      "time": "01:11",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 144,
+      "time": "01:12",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 145,
+      "time": "01:12",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 146,
+      "time": "01:13",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 147,
+      "time": "01:13",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 148,
+      "time": "01:14",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 149,
+      "time": "01:14",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 150,
+      "time": "01:15",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 151,
+      "time": "01:15",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 152,
+      "time": "01:16",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 153,
+      "time": "01:16",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 154,
+      "time": "01:17",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 155,
+      "time": "01:17",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 156,
+      "time": "01:18",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 157,
+      "time": "01:18",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 158,
+      "time": "01:19",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 159,
+      "time": "01:19",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 160,
+      "time": "01:20",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 161,
+      "time": "01:20",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 162,
+      "time": "01:21",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 163,
+      "time": "01:21",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 164,
+      "time": "01:22",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 165,
+      "time": "01:22",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 166,
+      "time": "01:23",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 167,
+      "time": "01:23",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 168,
+      "time": "01:24",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 169,
+      "time": "01:24",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 170,
+      "time": "01:25",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 171,
+      "time": "01:25",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 172,
+      "time": "01:26",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 173,
+      "time": "01:26",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 174,
+      "time": "01:27",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 175,
+      "time": "01:27",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 176,
+      "time": "01:28",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 177,
+      "time": "01:28",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 178,
+      "time": "01:29",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 179,
+      "time": "01:29",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 180,
+      "time": "01:30",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 181,
+      "time": "01:30",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 182,
+      "time": "01:31",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 183,
+      "time": "01:31",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 184,
+      "time": "01:32",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 185,
+      "time": "01:32",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 186,
+      "time": "01:33",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 187,
+      "time": "01:33",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 188,
+      "time": "01:34",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 189,
+      "time": "01:34",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 190,
+      "time": "01:35",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 191,
+      "time": "01:35",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 192,
+      "time": "01:36",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 193,
+      "time": "01:36",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 194,
+      "time": "01:37",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 195,
+      "time": "01:37",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 196,
+      "time": "01:38",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 197,
+      "time": "01:38",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 198,
+      "time": "01:39",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 199,
+      "time": "01:39",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 200,
+      "time": "01:40",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 201,
+      "time": "01:40",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 202,
+      "time": "01:41",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 203,
+      "time": "01:41",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 204,
+      "time": "01:42",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 205,
+      "time": "01:42",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 206,
+      "time": "01:43",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 207,
+      "time": "01:43",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 208,
+      "time": "01:44",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 209,
+      "time": "01:44",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 210,
+      "time": "01:45",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 211,
+      "time": "01:45",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 212,
+      "time": "01:46",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 213,
+      "time": "01:46",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 214,
+      "time": "01:47",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 215,
+      "time": "01:47",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 216,
+      "time": "01:48",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 217,
+      "time": "01:48",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 218,
+      "time": "01:49",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 219,
+      "time": "01:49",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 220,
+      "time": "01:50",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 221,
+      "time": "01:50",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 222,
+      "time": "01:51",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 223,
+      "time": "01:51",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 224,
+      "time": "01:52",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 225,
+      "time": "01:52",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 226,
+      "time": "01:53",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 227,
+      "time": "01:53",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 228,
+      "time": "01:54",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 229,
+      "time": "01:54",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 230,
+      "time": "01:55",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 231,
+      "time": "01:55",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 232,
+      "time": "01:56",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 233,
+      "time": "01:56",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 234,
+      "time": "01:57",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 235,
+      "time": "01:57",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 236,
+      "time": "01:58",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 237,
+      "time": "01:58",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 238,
+      "time": "01:59",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 239,
+      "time": "01:59",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 240,
+      "time": "02:00",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 241,
+      "time": "02:00",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 242,
+      "time": "02:01",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 243,
+      "time": "02:01",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 244,
+      "time": "02:02",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 245,
+      "time": "02:02",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 246,
+      "time": "02:03",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 247,
+      "time": "02:03",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 248,
+      "time": "02:04",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 249,
+      "time": "02:04",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 250,
+      "time": "02:05",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 251,
+      "time": "02:05",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 252,
+      "time": "02:06",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 253,
+      "time": "02:06",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 254,
+      "time": "02:07",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 255,
+      "time": "02:07",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 256,
+      "time": "02:08",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 257,
+      "time": "02:08",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 258,
+      "time": "02:09",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 259,
+      "time": "02:09",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 260,
+      "time": "02:10",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 261,
+      "time": "02:10",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 262,
+      "time": "02:11",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 263,
+      "time": "02:11",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 264,
+      "time": "02:12",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 265,
+      "time": "02:12",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 266,
+      "time": "02:13",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 267,
+      "time": "02:13",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 268,
+      "time": "02:14",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 269,
+      "time": "02:14",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 270,
+      "time": "02:15",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 271,
+      "time": "02:15",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 272,
+      "time": "02:16",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 273,
+      "time": "02:16",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 274,
+      "time": "02:17",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 275,
+      "time": "02:17",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 276,
+      "time": "02:18",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 277,
+      "time": "02:18",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 278,
+      "time": "02:19",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 279,
+      "time": "02:19",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 280,
+      "time": "02:20",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 281,
+      "time": "02:20",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 282,
+      "time": "02:21",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 283,
+      "time": "02:21",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 284,
+      "time": "02:22",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 285,
+      "time": "02:22",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 286,
+      "time": "02:23",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 287,
+      "time": "02:23",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 288,
+      "time": "02:24",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 289,
+      "time": "02:24",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 290,
+      "time": "02:25",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 291,
+      "time": "02:25",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 292,
+      "time": "02:26",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 293,
+      "time": "02:26",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 294,
+      "time": "02:27",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 295,
+      "time": "02:27",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 296,
+      "time": "02:28",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 297,
+      "time": "02:28",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 298,
+      "time": "02:29",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 299,
+      "time": "02:29",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 300,
+      "time": "02:30",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 301,
+      "time": "02:30",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 302,
+      "time": "02:31",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 303,
+      "time": "02:31",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 304,
+      "time": "02:32",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 305,
+      "time": "02:32",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 306,
+      "time": "02:33",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 307,
+      "time": "02:33",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 308,
+      "time": "02:34",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 309,
+      "time": "02:34",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 310,
+      "time": "02:35",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 311,
+      "time": "02:35",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 312,
+      "time": "02:36",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 313,
+      "time": "02:36",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 314,
+      "time": "02:37",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 315,
+      "time": "02:37",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 316,
+      "time": "02:38",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 317,
+      "time": "02:38",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 318,
+      "time": "02:39",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 319,
+      "time": "02:39",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 320,
+      "time": "02:40",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 321,
+      "time": "02:40",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 322,
+      "time": "02:41",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 323,
+      "time": "02:41",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 324,
+      "time": "02:42",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 325,
+      "time": "02:42",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 326,
+      "time": "02:43",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 327,
+      "time": "02:43",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 328,
+      "time": "02:44",
+      "male": "��",
+      "female": "��"
+    },
+    {
+      "epoch": 329,
+      "time": "02:44",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 330,
+      "time": "02:45",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 331,
+      "time": "02:45",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 332,
+      "time": "02:46",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 333,
+      "time": "02:46",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 334,
+      "time": "02:47",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 335,
+      "time": "02:47",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 336,
+      "time": "02:48",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 337,
+      "time": "02:48",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 338,
+      "time": "02:49",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 339,
+      "time": "02:49",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 340,
+      "time": "02:50",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 341,
+      "time": "02:50",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 342,
+      "time": "02:51",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 343,
+      "time": "02:51",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 344,
+      "time": "02:52",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 345,
+      "time": "02:52",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 346,
+      "time": "02:53",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 347,
+      "time": "02:53",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 348,
+      "time": "02:54",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 349,
+      "time": "02:54",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 350,
+      "time": "02:55",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 351,
+      "time": "02:55",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 352,
+      "time": "02:56",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 353,
+      "time": "02:56",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 354,
+      "time": "02:57",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 355,
+      "time": "02:57",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 356,
+      "time": "02:58",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 357,
+      "time": "02:58",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 358,
+      "time": "02:59",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 359,
+      "time": "02:59",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 360,
+      "time": "03:00",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 361,
+      "time": "03:00",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 362,
+      "time": "03:01",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 363,
+      "time": "03:01",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 364,
+      "time": "03:02",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 365,
+      "time": "03:02",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 366,
+      "time": "03:03",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 367,
+      "time": "03:03",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 368,
+      "time": "03:04",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 369,
+      "time": "03:04",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 370,
+      "time": "03:05",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 371,
+      "time": "03:05",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 372,
+      "time": "03:06",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 373,
+      "time": "03:06",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 374,
+      "time": "03:07",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 375,
+      "time": "03:07",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 376,
+      "time": "03:08",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 377,
+      "time": "03:08",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 378,
+      "time": "03:09",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 379,
+      "time": "03:09",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 380,
+      "time": "03:10",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 381,
+      "time": "03:10",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 382,
+      "time": "03:11",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 383,
+      "time": "03:11",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 384,
+      "time": "03:12",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 385,
+      "time": "03:12",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 386,
+      "time": "03:13",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 387,
+      "time": "03:13",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 388,
+      "time": "03:14",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 389,
+      "time": "03:14",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 390,
+      "time": "03:15",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 391,
+      "time": "03:15",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 392,
+      "time": "03:16",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 393,
+      "time": "03:16",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 394,
+      "time": "03:17",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 395,
+      "time": "03:17",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 396,
+      "time": "03:18",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 397,
+      "time": "03:18",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 398,
+      "time": "03:19",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 399,
+      "time": "03:19",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 400,
+      "time": "03:20",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 401,
+      "time": "03:20",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 402,
+      "time": "03:21",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 403,
+      "time": "03:21",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 404,
+      "time": "03:22",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 405,
+      "time": "03:22",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 406,
+      "time": "03:23",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 407,
+      "time": "03:23",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 408,
+      "time": "03:24",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 409,
+      "time": "03:24",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 410,
+      "time": "03:25",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 411,
+      "time": "03:25",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 412,
+      "time": "03:26",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 413,
+      "time": "03:26",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 414,
+      "time": "03:27",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 415,
+      "time": "03:27",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 416,
+      "time": "03:28",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 417,
+      "time": "03:28",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 418,
+      "time": "03:29",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 419,
+      "time": "03:29",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 420,
+      "time": "03:30",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 421,
+      "time": "03:30",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 422,
+      "time": "03:31",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 423,
+      "time": "03:31",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 424,
+      "time": "03:32",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 425,
+      "time": "03:32",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 426,
+      "time": "03:33",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 427,
+      "time": "03:33",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 428,
+      "time": "03:34",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 429,
+      "time": "03:34",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 430,
+      "time": "03:35",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 431,
+      "time": "03:35",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 432,
+      "time": "03:36",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 433,
+      "time": "03:36",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 434,
+      "time": "03:37",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 435,
+      "time": "03:37",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 436,
+      "time": "03:38",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 437,
+      "time": "03:38",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 438,
+      "time": "03:39",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 439,
+      "time": "03:39",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 440,
+      "time": "03:40",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 441,
+      "time": "03:40",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 442,
+      "time": "03:41",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 443,
+      "time": "03:41",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 444,
+      "time": "03:42",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 445,
+      "time": "03:42",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 446,
+      "time": "03:43",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 447,
+      "time": "03:43",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 448,
+      "time": "03:44",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 449,
+      "time": "03:44",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 450,
+      "time": "03:45",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 451,
+      "time": "03:45",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 452,
+      "time": "03:46",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 453,
+      "time": "03:46",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 454,
+      "time": "03:47",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 455,
+      "time": "03:47",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 456,
+      "time": "03:48",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 457,
+      "time": "03:48",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 458,
+      "time": "03:49",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 459,
+      "time": "03:49",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 460,
+      "time": "03:50",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 461,
+      "time": "03:50",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 462,
+      "time": "03:51",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 463,
+      "time": "03:51",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 464,
+      "time": "03:52",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 465,
+      "time": "03:52",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 466,
+      "time": "03:53",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 467,
+      "time": "03:53",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 468,
+      "time": "03:54",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 469,
+      "time": "03:54",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 470,
+      "time": "03:55",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 471,
+      "time": "03:55",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 472,
+      "time": "03:56",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 473,
+      "time": "03:56",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 474,
+      "time": "03:57",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 475,
+      "time": "03:57",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 476,
+      "time": "03:58",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 477,
+      "time": "03:58",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 478,
+      "time": "03:59",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 479,
+      "time": "03:59",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 480,
+      "time": "04:00",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 481,
+      "time": "04:00",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 482,
+      "time": "04:01",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 483,
+      "time": "04:01",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 484,
+      "time": "04:02",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 485,
+      "time": "04:02",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 486,
+      "time": "04:03",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 487,
+      "time": "04:03",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 488,
+      "time": "04:04",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 489,
+      "time": "04:04",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 490,
+      "time": "04:05",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 491,
+      "time": "04:05",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 492,
+      "time": "04:06",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 493,
+      "time": "04:06",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 494,
+      "time": "04:07",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 495,
+      "time": "04:07",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 496,
+      "time": "04:08",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 497,
+      "time": "04:08",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 498,
+      "time": "04:09",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 499,
+      "time": "04:09",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 500,
+      "time": "04:10",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 501,
+      "time": "04:10",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 502,
+      "time": "04:11",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 503,
+      "time": "04:11",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 504,
+      "time": "04:12",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 505,
+      "time": "04:12",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 506,
+      "time": "04:13",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 507,
+      "time": "04:13",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 508,
+      "time": "04:14",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 509,
+      "time": "04:14",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 510,
+      "time": "04:15",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 511,
+      "time": "04:15",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 512,
+      "time": "04:16",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 513,
+      "time": "04:16",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 514,
+      "time": "04:17",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 515,
+      "time": "04:17",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 516,
+      "time": "04:18",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 517,
+      "time": "04:18",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 518,
+      "time": "04:19",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 519,
+      "time": "04:19",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 520,
+      "time": "04:20",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 521,
+      "time": "04:20",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 522,
+      "time": "04:21",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 523,
+      "time": "04:21",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 524,
+      "time": "04:22",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 525,
+      "time": "04:22",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 526,
+      "time": "04:23",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 527,
+      "time": "04:23",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 528,
+      "time": "04:24",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 529,
+      "time": "04:24",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 530,
+      "time": "04:25",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 531,
+      "time": "04:25",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 532,
+      "time": "04:26",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 533,
+      "time": "04:26",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 534,
+      "time": "04:27",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 535,
+      "time": "04:27",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 536,
+      "time": "04:28",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 537,
+      "time": "04:28",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 538,
+      "time": "04:29",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 539,
+      "time": "04:29",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 540,
+      "time": "04:30",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 541,
+      "time": "04:30",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 542,
+      "time": "04:31",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 543,
+      "time": "04:31",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 544,
+      "time": "04:32",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 545,
+      "time": "04:32",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 546,
+      "time": "04:33",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 547,
+      "time": "04:33",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 548,
+      "time": "04:34",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 549,
+      "time": "04:34",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 550,
+      "time": "04:35",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 551,
+      "time": "04:35",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 552,
+      "time": "04:36",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 553,
+      "time": "04:36",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 554,
+      "time": "04:37",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 555,
+      "time": "04:37",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 556,
+      "time": "04:38",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 557,
+      "time": "04:38",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 558,
+      "time": "04:39",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 559,
+      "time": "04:39",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 560,
+      "time": "04:40",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 561,
+      "time": "04:40",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 562,
+      "time": "04:41",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 563,
+      "time": "04:41",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 564,
+      "time": "04:42",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 565,
+      "time": "04:42",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 566,
+      "time": "04:43",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 567,
+      "time": "04:43",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 568,
+      "time": "04:44",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 569,
+      "time": "04:44",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 570,
+      "time": "04:45",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 571,
+      "time": "04:45",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 572,
+      "time": "04:46",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 573,
+      "time": "04:46",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 574,
+      "time": "04:47",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 575,
+      "time": "04:47",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 576,
+      "time": "04:48",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 577,
+      "time": "04:48",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 578,
+      "time": "04:49",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 579,
+      "time": "04:49",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 580,
+      "time": "04:50",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 581,
+      "time": "04:50",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 582,
+      "time": "04:51",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 583,
+      "time": "04:51",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 584,
+      "time": "04:52",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 585,
+      "time": "04:52",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 586,
+      "time": "04:53",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 587,
+      "time": "04:53",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 588,
+      "time": "04:54",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 589,
+      "time": "04:54",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 590,
+      "time": "04:55",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 591,
+      "time": "04:55",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 592,
+      "time": "04:56",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 593,
+      "time": "04:56",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 594,
+      "time": "04:57",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 595,
+      "time": "04:57",
+      "male": "��",
+      "female": "��"
+    },
+    {
+      "epoch": 596,
+      "time": "04:58",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 597,
+      "time": "04:58",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 598,
+      "time": "04:59",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 599,
+      "time": "04:59",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 600,
+      "time": "05:00",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 601,
+      "time": "05:00",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 602,
+      "time": "05:01",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 603,
+      "time": "05:01",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 604,
+      "time": "05:02",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 605,
+      "time": "05:02",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 606,
+      "time": "05:03",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 607,
+      "time": "05:03",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 608,
+      "time": "05:04",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 609,
+      "time": "05:04",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 610,
+      "time": "05:05",
+      "male": "��",
+      "female": "��"
+    },
+    {
+      "epoch": 611,
+      "time": "05:05",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 612,
+      "time": "05:06",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 613,
+      "time": "05:06",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 614,
+      "time": "05:07",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 615,
+      "time": "05:07",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 616,
+      "time": "05:08",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 617,
+      "time": "05:08",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 618,
+      "time": "05:09",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 619,
+      "time": "05:09",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 620,
+      "time": "05:10",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 621,
+      "time": "05:10",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 622,
+      "time": "05:11",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 623,
+      "time": "05:11",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 624,
+      "time": "05:12",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 625,
+      "time": "05:12",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 626,
+      "time": "05:13",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 627,
+      "time": "05:13",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 628,
+      "time": "05:14",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 629,
+      "time": "05:14",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 630,
+      "time": "05:15",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 631,
+      "time": "05:15",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 632,
+      "time": "05:16",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 633,
+      "time": "05:16",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 634,
+      "time": "05:17",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 635,
+      "time": "05:17",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 636,
+      "time": "05:18",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 637,
+      "time": "05:18",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 638,
+      "time": "05:19",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 639,
+      "time": "05:19",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 640,
+      "time": "05:20",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 641,
+      "time": "05:20",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 642,
+      "time": "05:21",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 643,
+      "time": "05:21",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 644,
+      "time": "05:22",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 645,
+      "time": "05:22",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 646,
+      "time": "05:23",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 647,
+      "time": "05:23",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 648,
+      "time": "05:24",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 649,
+      "time": "05:24",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 650,
+      "time": "05:25",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 651,
+      "time": "05:25",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 652,
+      "time": "05:26",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 653,
+      "time": "05:26",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 654,
+      "time": "05:27",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 655,
+      "time": "05:27",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 656,
+      "time": "05:28",
+      "male": "��",
+      "female": "��"
+    },
+    {
+      "epoch": 657,
+      "time": "05:28",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 658,
+      "time": "05:29",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 659,
+      "time": "05:29",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 660,
+      "time": "05:30",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 661,
+      "time": "05:30",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 662,
+      "time": "05:31",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 663,
+      "time": "05:31",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 664,
+      "time": "05:32",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 665,
+      "time": "05:32",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 666,
+      "time": "05:33",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 667,
+      "time": "05:33",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 668,
+      "time": "05:34",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 669,
+      "time": "05:34",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 670,
+      "time": "05:35",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 671,
+      "time": "05:35",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 672,
+      "time": "05:36",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 673,
+      "time": "05:36",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 674,
+      "time": "05:37",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 675,
+      "time": "05:37",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 676,
+      "time": "05:38",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 677,
+      "time": "05:38",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 678,
+      "time": "05:39",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 679,
+      "time": "05:39",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 680,
+      "time": "05:40",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 681,
+      "time": "05:40",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 682,
+      "time": "05:41",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 683,
+      "time": "05:41",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 684,
+      "time": "05:42",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 685,
+      "time": "05:42",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 686,
+      "time": "05:43",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 687,
+      "time": "05:43",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 688,
+      "time": "05:44",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 689,
+      "time": "05:44",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 690,
+      "time": "05:45",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 691,
+      "time": "05:45",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 692,
+      "time": "05:46",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 693,
+      "time": "05:46",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 694,
+      "time": "05:47",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 695,
+      "time": "05:47",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 696,
+      "time": "05:48",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 697,
+      "time": "05:48",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 698,
+      "time": "05:49",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 699,
+      "time": "05:49",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 700,
+      "time": "05:50",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 701,
+      "time": "05:50",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 702,
+      "time": "05:51",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 703,
+      "time": "05:51",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 704,
+      "time": "05:52",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 705,
+      "time": "05:52",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 706,
+      "time": "05:53",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 707,
+      "time": "05:53",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 708,
+      "time": "05:54",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 709,
+      "time": "05:54",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 710,
+      "time": "05:55",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 711,
+      "time": "05:55",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 712,
+      "time": "05:56",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 713,
+      "time": "05:56",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 714,
+      "time": "05:57",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 715,
+      "time": "05:57",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 716,
+      "time": "05:58",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 717,
+      "time": "05:58",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 718,
+      "time": "05:59",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 719,
+      "time": "05:59",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 720,
+      "time": "06:00",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 721,
+      "time": "06:00",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 722,
+      "time": "06:01",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 723,
+      "time": "06:01",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 724,
+      "time": "06:02",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 725,
+      "time": "06:02",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 726,
+      "time": "06:03",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 727,
+      "time": "06:03",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 728,
+      "time": "06:04",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 729,
+      "time": "06:04",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 730,
+      "time": "06:05",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 731,
+      "time": "06:05",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 732,
+      "time": "06:06",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 733,
+      "time": "06:06",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 734,
+      "time": "06:07",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 735,
+      "time": "06:07",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 736,
+      "time": "06:08",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 737,
+      "time": "06:08",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 738,
+      "time": "06:09",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 739,
+      "time": "06:09",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 740,
+      "time": "06:10",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 741,
+      "time": "06:10",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 742,
+      "time": "06:11",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 743,
+      "time": "06:11",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 744,
+      "time": "06:12",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 745,
+      "time": "06:12",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 746,
+      "time": "06:13",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 747,
+      "time": "06:13",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 748,
+      "time": "06:14",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 749,
+      "time": "06:14",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 750,
+      "time": "06:15",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 751,
+      "time": "06:15",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 752,
+      "time": "06:16",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 753,
+      "time": "06:16",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 754,
+      "time": "06:17",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 755,
+      "time": "06:17",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 756,
+      "time": "06:18",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 757,
+      "time": "06:18",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 758,
+      "time": "06:19",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 759,
+      "time": "06:19",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 760,
+      "time": "06:20",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 761,
+      "time": "06:20",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 762,
+      "time": "06:21",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 763,
+      "time": "06:21",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 764,
+      "time": "06:22",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 765,
+      "time": "06:22",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 766,
+      "time": "06:23",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 767,
+      "time": "06:23",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 768,
+      "time": "06:24",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 769,
+      "time": "06:24",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 770,
+      "time": "06:25",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 771,
+      "time": "06:25",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 772,
+      "time": "06:26",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 773,
+      "time": "06:26",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 774,
+      "time": "06:27",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 775,
+      "time": "06:27",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 776,
+      "time": "06:28",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 777,
+      "time": "06:28",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 778,
+      "time": "06:29",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 779,
+      "time": "06:29",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 780,
+      "time": "06:30",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 781,
+      "time": "06:30",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 782,
+      "time": "06:31",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 783,
+      "time": "06:31",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 784,
+      "time": "06:32",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 785,
+      "time": "06:32",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 786,
+      "time": "06:33",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 787,
+      "time": "06:33",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 788,
+      "time": "06:34",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 789,
+      "time": "06:34",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 790,
+      "time": "06:35",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 791,
+      "time": "06:35",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 792,
+      "time": "06:36",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 793,
+      "time": "06:36",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 794,
+      "time": "06:37",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 795,
+      "time": "06:37",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 796,
+      "time": "06:38",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 797,
+      "time": "06:38",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 798,
+      "time": "06:39",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 799,
+      "time": "06:39",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 800,
+      "time": "06:40",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 801,
+      "time": "06:40",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 802,
+      "time": "06:41",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 803,
+      "time": "06:41",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 804,
+      "time": "06:42",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 805,
+      "time": "06:42",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 806,
+      "time": "06:43",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 807,
+      "time": "06:43",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 808,
+      "time": "06:44",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 809,
+      "time": "06:44",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 810,
+      "time": "06:45",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 811,
+      "time": "06:45",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 812,
+      "time": "06:46",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 813,
+      "time": "06:46",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 814,
+      "time": "06:47",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 815,
+      "time": "06:47",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 816,
+      "time": "06:48",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 817,
+      "time": "06:48",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 818,
+      "time": "06:49",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 819,
+      "time": "06:49",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 820,
+      "time": "06:50",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 821,
+      "time": "06:50",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 822,
+      "time": "06:51",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 823,
+      "time": "06:51",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 824,
+      "time": "06:52",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 825,
+      "time": "06:52",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 826,
+      "time": "06:53",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 827,
+      "time": "06:53",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 828,
+      "time": "06:54",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 829,
+      "time": "06:54",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 830,
+      "time": "06:55",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 831,
+      "time": "06:55",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 832,
+      "time": "06:56",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 833,
+      "time": "06:56",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 834,
+      "time": "06:57",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 835,
+      "time": "06:57",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 836,
+      "time": "06:58",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 837,
+      "time": "06:58",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 838,
+      "time": "06:59",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 839,
+      "time": "06:59",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 840,
+      "time": "07:00",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 841,
+      "time": "07:00",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 842,
+      "time": "07:01",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 843,
+      "time": "07:01",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 844,
+      "time": "07:02",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 845,
+      "time": "07:02",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 846,
+      "time": "07:03",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 847,
+      "time": "07:03",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 848,
+      "time": "07:04",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 849,
+      "time": "07:04",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 850,
+      "time": "07:05",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 851,
+      "time": "07:05",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 852,
+      "time": "07:06",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 853,
+      "time": "07:06",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 854,
+      "time": "07:07",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 855,
+      "time": "07:07",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 856,
+      "time": "07:08",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 857,
+      "time": "07:08",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 858,
+      "time": "07:09",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 859,
+      "time": "07:09",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 860,
+      "time": "07:10",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 861,
+      "time": "07:10",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 862,
+      "time": "07:11",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 863,
+      "time": "07:11",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 864,
+      "time": "07:12",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 865,
+      "time": "07:12",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 866,
+      "time": "07:13",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 867,
+      "time": "07:13",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 868,
+      "time": "07:14",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 869,
+      "time": "07:14",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 870,
+      "time": "07:15",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 871,
+      "time": "07:15",
+      "male": "��",
+      "female": "��"
+    },
+    {
+      "epoch": 872,
+      "time": "07:16",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 873,
+      "time": "07:16",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 874,
+      "time": "07:17",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 875,
+      "time": "07:17",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 876,
+      "time": "07:18",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 877,
+      "time": "07:18",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 878,
+      "time": "07:19",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 879,
+      "time": "07:19",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 880,
+      "time": "07:20",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 881,
+      "time": "07:20",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 882,
+      "time": "07:21",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 883,
+      "time": "07:21",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 884,
+      "time": "07:22",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 885,
+      "time": "07:22",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 886,
+      "time": "07:23",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 887,
+      "time": "07:23",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 888,
+      "time": "07:24",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 889,
+      "time": "07:24",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 890,
+      "time": "07:25",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 891,
+      "time": "07:25",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 892,
+      "time": "07:26",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 893,
+      "time": "07:26",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 894,
+      "time": "07:27",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 895,
+      "time": "07:27",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 896,
+      "time": "07:28",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 897,
+      "time": "07:28",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 898,
+      "time": "07:29",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 899,
+      "time": "07:29",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 900,
+      "time": "07:30",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 901,
+      "time": "07:30",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 902,
+      "time": "07:31",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 903,
+      "time": "07:31",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 904,
+      "time": "07:32",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 905,
+      "time": "07:32",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 906,
+      "time": "07:33",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 907,
+      "time": "07:33",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 908,
+      "time": "07:34",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 909,
+      "time": "07:34",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 910,
+      "time": "07:35",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 911,
+      "time": "07:35",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 912,
+      "time": "07:36",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 913,
+      "time": "07:36",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 914,
+      "time": "07:37",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 915,
+      "time": "07:37",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 916,
+      "time": "07:38",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 917,
+      "time": "07:38",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 918,
+      "time": "07:39",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 919,
+      "time": "07:39",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 920,
+      "time": "07:40",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 921,
+      "time": "07:40",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 922,
+      "time": "07:41",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 923,
+      "time": "07:41",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 924,
+      "time": "07:42",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 925,
+      "time": "07:42",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 926,
+      "time": "07:43",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 927,
+      "time": "07:43",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 928,
+      "time": "07:44",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 929,
+      "time": "07:44",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 930,
+      "time": "07:45",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 931,
+      "time": "07:45",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 932,
+      "time": "07:46",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 933,
+      "time": "07:46",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 934,
+      "time": "07:47",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 935,
+      "time": "07:47",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 936,
+      "time": "07:48",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 937,
+      "time": "07:48",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 938,
+      "time": "07:49",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 939,
+      "time": "07:49",
+      "male": "��",
+      "female": "˯"
+    },
+    {
+      "epoch": 940,
+      "time": "07:50",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 941,
+      "time": "07:50",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 942,
+      "time": "07:51",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 943,
+      "time": "07:51",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 944,
+      "time": "07:52",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 945,
+      "time": "07:52",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 946,
+      "time": "07:53",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 947,
+      "time": "07:53",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 948,
+      "time": "07:54",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 949,
+      "time": "07:54",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 950,
+      "time": "07:55",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 951,
+      "time": "07:55",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 952,
+      "time": "07:56",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 953,
+      "time": "07:56",
+      "male": "˯",
+      "female": "��"
+    },
+    {
+      "epoch": 954,
+      "time": "07:57",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 955,
+      "time": "07:57",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 956,
+      "time": "07:58",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 957,
+      "time": "07:58",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 958,
+      "time": "07:59",
+      "male": "˯",
+      "female": "˯"
+    },
+    {
+      "epoch": 959,
+      "time": "07:59",
+      "male": "˯",
+      "female": "˯"
+    }
+  ]
+}

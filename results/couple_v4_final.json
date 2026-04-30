@@ -1,0 +1,10 @@
+{
+  "male": {
+    "sleep_min": 105.5,
+    "efficiency": 21.979166666666668
+  },
+  "female": {
+    "sleep_min": 432.0,
+    "efficiency": 90.0
+  }
+}

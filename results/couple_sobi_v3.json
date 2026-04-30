@@ -1,0 +1,22 @@
+{
+  "male": {
+    "sleep_min": 418.5,
+    "wake_min": 61.5,
+    "efficiency": 87.2
+  },
+  "female": {
+    "sleep_min": 422.0,
+    "wake_min": 58.0,
+    "efficiency": 87.9
+  },
+  "agreement": {
+    "both_sleep_min": 418.0,
+    "both_wake_min": 57.5,
+    "m_sleep_f_wake_min": 0.5,
+    "m_wake_f_sleep_min": 4.0
+  },
+  "mean_resp_rate": {
+    "male_bpm": 18.8,
+    "female_bpm": 18.8
+  }
+}
