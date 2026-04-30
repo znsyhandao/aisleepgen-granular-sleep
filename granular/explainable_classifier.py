@@ -128,6 +128,17 @@ class ExplainableFuzzyClassifier:
         # softmax normalize
         scores = np.exp(scores - np.max(scores))
         scores /= np.sum(scores) + 1e-15
+        # [方案A] N1过渡区区域Boost
+        if stage == "N1":
+            try:
+                bi = self.feature_names_.index("beta_power")
+                di = self.feature_names_.index("delta_theta_ratio")
+                bz, dz = features_z[bi], features_z[di]
+                if -1.0 < bz < 1.0 and -1.0 < dz < 1.0:
+                    score *= 1.3
+            except ValueError:
+                pass
+
         return scores
     
     def predict(self, X: np.ndarray, smooth_window: int = 3) -> np.ndarray:
@@ -153,6 +164,21 @@ class ExplainableFuzzyClassifier:
             kernel = np.ones(smooth_window) / smooth_window
             for si in range(len(STAGES)):
                 smoothed[:, si] = np.convolve(probs[:, si], kernel, mode='same')
+        
+        # [方案C] 过渡期后处理（N1提升）
+        try:
+            from granular.transition_detector import post_process as _post_n1
+            _ft = X if hasattr(self, 'feature_names_') else X
+            _dt_idx = -1
+            _be_idx = -1
+            if hasattr(self, 'feature_names_'):
+                try: _dt_idx = self.feature_names_.index('delta_theta_ratio')
+                except ValueError: pass
+                try: _be_idx = self.feature_names_.index('beta_power')
+                except ValueError: pass
+            stages = list(_post_n1(np.array(stages), X, None, _dt_idx, _be_idx))
+        except ImportError:
+            pass
         
         # 阶段转移约束（Viterbi-like）
         stages = []
