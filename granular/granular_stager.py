@@ -94,10 +94,11 @@ class GranularSleepStager:
         stages = base_stages.copy()
         confidences = base_conf.copy()
         
-        # 只对低于阈值的区域做平滑
+        # [L3] N1保护：N1不参与平滑（过渡期孤立epoch容易被吞）
+        n1_mask = base_stages == "N1"
         LOW_CONF = 0.5
         for i in range(n):
-            if base_conf[i] < LOW_CONF:
+            if base_conf[i] < LOW_CONF and not n1_mask[i]:
                 stages[i] = lr_classes[np.argmax(smoothed[i])]
                 confidences[i] = np.max(smoothed[i])
         
