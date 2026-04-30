@@ -106,7 +106,7 @@ for ti, ts in enumerate(STAGES):
 print(f'\n[5] 信息粒 ({len(granules)} granules):')
 for g in granules[:20]:
     marker = ' ⚠' if g['confidence'] < 0.7 else ''
-    print(f'  [{g["start_min"]:.0f}-{g["end_min"]:.0f}min] {g["stage"]} {g["duration_min"]:.0f}min  conf={g["confidence"]:.3f}{marker}')
+    print(f'  [{g["start_minute"]:.0f}-{g["end_minute"]:.0f}min] {g["stage"]} {g["duration_minutes"]:.0f}min  conf={g["confidence"]:.3f}{marker}')
 
 print(f'  ... {len(granules)-20} more granules omitted')
 
@@ -130,17 +130,16 @@ for s in STAGES:
 print(f'\n[7] 睡眠报告 (测试集):')
 n_epochs_test = len(y_test)
 if n_epochs_test > 0:
-    hours = n_epochs_test * 0.5 / 60
     sleep_mask = y_pred != 'W'
     sleep_pct = np.mean(sleep_mask) * 100
     
-    print(f'  Total: {hours:.1f}h, {n_epochs_test} epochs')
-    print(f'  Sleep: {sleep_pct:.1f}% (⌀{hours * sleep_pct / 100:.1f}h)')
+    total_hours = n_epochs_test * 0.5 / 60
+    print(f'  Total: {total_hours:.1f}h, {n_epochs_test} epochs')
+    print(f'  Sleep: {sleep_pct:.1f}% (⌀{total_hours * sleep_pct / 100:.1f}h)')
     
-    for s in STAGES:
-        if s == 'W': continue
+    for s in ['N1', 'N2', 'N3', 'REM']:
         pct = np.mean(y_pred == s) * 100
-        print(f'    {s}: {pct:.1f}% ({pct * hours / 100:.1f}h)')
+        print(f'    {s}: {pct:.1f}% ({pct * total_hours / 100:.1f}h)')
 
 # 9. 可视化
 import matplotlib

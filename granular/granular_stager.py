@@ -76,15 +76,19 @@ class GranularSleepStager:
         probs = self.predict_proba(X)
         n = len(probs)
         
+        # 使用 LR 的类别顺序（不是硬编码 STAGES）
+        lr_classes = list(self.base_clf.classes_)
+        n_classes = len(lr_classes)
+        
         # Step 1: 平滑（保留模式：只对低置信区做修正）
         smoothed = probs.copy()
         if smooth_window > 1:
             kernel = np.ones(smooth_window) / smooth_window
-            for si in range(len(STAGES)):
+            for si in range(n_classes):
                 smoothed[:, si] = np.convolve(probs[:, si], kernel, mode='same')
         
         # Step 2: 保留原始预测作为base，只对低置信区做平滑修正
-        base_stages = np.array([STAGES[np.argmax(probs[i])] for i in range(n)])
+        base_stages = np.array([lr_classes[np.argmax(probs[i])] for i in range(n)])
         base_conf = np.array([np.max(probs[i]) for i in range(n)])
         
         stages = base_stages.copy()
@@ -94,7 +98,7 @@ class GranularSleepStager:
         LOW_CONF = 0.5
         for i in range(n):
             if base_conf[i] < LOW_CONF:
-                stages[i] = STAGES[np.argmax(smoothed[i])]
+                stages[i] = lr_classes[np.argmax(smoothed[i])]
                 confidences[i] = np.max(smoothed[i])
         
         # Step 3: 信息粒构建
@@ -119,10 +123,10 @@ class GranularSleepStager:
                         'stage': current,
                         'start_epoch': start,
                         'end_epoch': i - 1,
-                        'start_min': start * 0.5,
-                        'end_min': (i - 1) * 0.5,
+                        'start_minute': start * 0.5,
+                        'end_minute': (i - 1) * 0.5,
                         'confidence': float(np.mean(confidences[start:i])),
-                        'duration_min': granule_len * 0.5,
+                        'duration_minutes': granule_len * 0.5,
                         'n_epochs': granule_len,
                     })
                 start = i
@@ -135,10 +139,10 @@ class GranularSleepStager:
                 'stage': current,
                 'start_epoch': start,
                 'end_epoch': len(stages) - 1,
-                'start_min': start * 0.5,
-                'end_min': (len(stages) - 1) * 0.5,
+                'start_minute': start * 0.5,
+                'end_minute': (len(stages) - 1) * 0.5,
                 'confidence': float(np.mean(confidences[start:])),
-                'duration_min': granule_len * 0.5,
+                'duration_minutes': granule_len * 0.5,
                 'n_epochs': granule_len,
             })
         
