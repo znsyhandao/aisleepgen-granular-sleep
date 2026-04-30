@@ -6,6 +6,7 @@
   python cognition_pipeline.py status                查看状态
   python cognition_pipeline.py rollback <cid>        回退
   python cognition_pipeline.py optimize              自迭代(扫描待办+评估+选任务)
+  python cognition_pipeline.py evolve "目标"          思维轨迹进化(多方案并行+残差重组)
   python cognition_pipeline.py run "洞见"            评估+执行
   python cognition_pipeline.py eval "洞见"           仅评估
 
@@ -197,16 +198,52 @@ def cmd_optimize():
     print("  4. 回退失败 or 记录并完成")
     print(f"{'='*50}")
 
-def cmd_run_eval(text, do_run=False):
-    print(f"\n洞见: {text[:80]}")
-    print(f"{'='*50}")
-    print("评估报告(由AI填充):")
-    print("  价值: ?/10  工时: ?h  风险: ?")
-    print("  分析: ...")
-    print("  执行计划: ...")
-    if do_run:
-        print("\n--- 执行阶段 ---")
-        print("  备份 -> 改代码 -> 验证 -> 记录")
+def cmd_evolve(goal_text):
+    """
+    L3: 思维轨迹进化
+    从同一个目标出发，生成多个竞争方案 → 验证 → 选优 → 残差重组
+    """
+    init_db()
+
+    print(f"\n{'='*60}")
+    print(f"L3 思维轨迹进化")
+    print(f"{'='*60}")
+    print(f"目标: {goal_text[:80]}")
+    print()
+
+    # Phase 1: 生成3个竞争方案
+    print("--- Phase 1: 并行方案生成 ---")
+    print("方案A: 最小改动（当前代码基上直接修改）")
+    print("方案B: 全新实现（重写关键模块）")
+    print("方案C: 混合策略（复用+替换）")
+    print()
+
+    # Phase 2: 各自验证
+    print("--- Phase 2: 并行验证 ---")
+    print("方案A: 语法检查 → 单元测试 → 覆盖率")
+    print("方案B: 语法检查 → 单元测试 → 覆盖率")
+    print("方案C: 语法检查 → 单元测试 → 覆盖率")
+    print()
+
+    # Phase 3: 选优
+    print("--- Phase 3: 选择最优 ---")
+    print("对比指标: 性能/可读性/可扩展性/风险")
+    print("选择: [AI在此输出]")
+    print()
+
+    # Phase 4: 残差重组
+    print("--- Phase 4: 残差重组 ---")
+    print("落选方案中有价值的思路合并到最优方案")
+    print("合并后: [AI在此输出]")
+    print()
+
+    # Phase 5: 最终输出
+    print("--- Phase 5: 最终输出 ---")
+    print("方案来源: A + B的[C特征] + C的[D特征]")
+    print("文件: [AI在此填充]")
+    print()
+
+    return ['A', 'B', 'C']  # AI在方法内实际执行
 
 # ============================================
 # 入口
@@ -221,6 +258,12 @@ if __name__ == '__main__':
         cmd_rollback(sys.argv[2] if len(sys.argv) > 2 else 'last')
     elif ac == 'optimize':
         cmd_optimize()
+    elif ac == 'evolve':
+        text = sys.argv[2] if len(sys.argv) > 2 else sys.stdin.read().strip()
+        if not text:
+            print("需要目标描述: python cognition_pipeline.py evolve \"你的目标\"")
+            sys.exit(1)
+        cmd_evolve(text)
     elif ac == 'eval':
         cmd_run_eval(sys.argv[2] if len(sys.argv) > 2 else sys.stdin.read().strip(), False)
     elif ac == 'run':
