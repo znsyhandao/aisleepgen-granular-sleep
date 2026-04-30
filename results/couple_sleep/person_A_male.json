@@ -1,0 +1,18 @@
+{
+  "quality": {
+    "total_score": 55,
+    "grade": "Ò»°ã",
+    "efficiency_pct": 100.0,
+    "n3_pct": 100.0,
+    "rem_pct": 0.0,
+    "wake_min": 0.0
+  },
+  "stage_dist": {
+    "W": 0.0,
+    "N1": 0.0,
+    "N2": 0.0,
+    "N3": 9504.0,
+    "REM": 0.0
+  },
+  "n_epochs": 9504
+}
