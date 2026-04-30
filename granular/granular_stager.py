@@ -118,6 +118,20 @@ class GranularSleepStager:
                 confidences[i] = np.max(smoothed[i])
         
                 # [L3] 子epoch N1精炼：对低置信W/N2做子窗口分析
+        # [颠覆] 可变粒度N1精炼: 5秒滑动窗口
+        if _SUBEPOCH_ENABLED and _SUBEPOCH_DATA is not None:
+            try:
+                from .variable_granularity import adaptive_staging
+                fine_refined, fine_granules = adaptive_staging(
+                    _SUBEPOCH_DATA, _SUBEPOCH_SFREQ, stages, confidences, X
+                )
+                stages = fine_refined
+            except ImportError:
+                pass
+            except Exception as e:
+                pass
+        
+        # [L3] 子epoch N1精炼（原有逻辑）
         if _SUBEPOCH_ENABLED and _SUBEPOCH_DATA is not None:
             try:
                 from .subepoch_n1 import sub_epoch_variance_features as sub_epoch_features, detect_n1_subepoch_v2 as detect_n1_in_epoch
