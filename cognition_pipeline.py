@@ -1,26 +1,23 @@
 """
-认知评估与执行管道 (Cognition Pipeline) v1.1
-=====================================
+认知评估与执行管道 v2 - 自迭代核心
+====================================
 
-用户输入洞见 → AI分析评估 → 判断是否执行 → 改代码 → 记录
+用法:
+  python cognition_pipeline.py status                查看状态
+  python cognition_pipeline.py rollback <cid>        回退
+  python cognition_pipeline.py optimize              自迭代(扫描待办+评估+选任务)
+  python cognition_pipeline.py run "洞见"            评估+执行
+  python cognition_pipeline.py eval "洞见"           仅评估
 
-工作流:
-  1. 用户输入洞见文本
-  2. AI评估: 价值/工作量/风险/回退方案
-  3. 输出评估报告
-  4. 如果决策=执行 -> AI直接改代码
-  5. 如果决策=暂缓 -> 写入认知待办
-  6. 所有操作记录到 project_cognition.md
+自迭代流程:
+  1. AI扫描 cogniton_todo.md 待办列表
+  2. AI评估每项的 价值/工时/风险/可行性
+  3. AI选择最高价值/最可行的任务
+  4. 备份涉及文件 -> 执行修改 -> 验证 -> 记录 -> 从待办移除
+  
+  如果修改失败或验证不通过: 自动回退备份
 
-使用方式:
-  python cognition_pipeline.py run "你的洞见"       评估+执行
-  python cognition_pipeline.py eval "你的洞见"      仅评估不执行
-  python cognition_pipeline.py optimize             自迭代模式(从待办取任务)
-  python cognition_pipeline.py status               查看所有认知状态
-
-回退机制:
-  每次代码修改前自动备份 (backups/)
-  python cognition_pipeline.py rollback <cid/backup_id>
+回退: python cognition_pipeline.py rollback <认知ID>
 """
 
 import sys, os, json, re, datetime, shutil, subprocess
@@ -32,76 +29,72 @@ BACKUP_DIR = PROJECT_ROOT / 'backups'
 TODO_FILE = PROJECT_ROOT / 'cognition_todo.md'
 BACKUP_DIR.mkdir(exist_ok=True)
 
-EVAL_TEMPLATE = {
-    "cognition_id": "auto-{timestamp}",
-    "cognition_text": "",
-    "analysis": {
-        "summary": "一句话总结洞见核心",
-        "relevance_to_codebase": "与哪些模块相关",
-        "technical_feasibility": "是否技术上可做",
-        "data_requirements": "需要什么数据/传感器",
-        "current_limitations": "当前有什么限制"
-    },
-    "evaluation": {
-        "value_score": 0,
-        "effort_hours": 0.0,
-        "risk_level": "low",
-        "risk_factors": [],
-        "rollback_plan": "如何回退"
-    },
-    "decision": "defer",
-    "execution_plan": {
-        "files_to_modify": [],
-        "changes_summary": "",
-        "testing_method": ""
-    },
-    "rollback": {
-        "backup_files": [],
-        "restore_command": ""
-    }
-}
-
 # ============================================
-# 文件操作
+# 备份/回退
 # ============================================
 
 def backup_files(file_paths):
     ts = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
-    backup_id = f"backup_{ts}"
-    backup_path = BACKUP_DIR / backup_id
-    backup_path.mkdir(exist_ok=True)
+    backup_id = f"bkp_{ts}"
+    bp = BACKUP_DIR / backup_id; bp.mkdir(exist_ok=True)
     for fp in file_paths:
-        fpath = os.path.join(PROJECT_ROOT, fp) if not os.path.isabs(fp) else fp
-        if os.path.exists(fpath):
-            shutil.copy2(fpath, backup_path / os.path.basename(fp))
-    return backup_id, str(backup_path)
+        fpath = Path(fp) if os.path.isabs(fp) else PROJECT_ROOT / fp
+        if fpath.exists():
+            shutil.copy2(str(fpath), str(bp / fpath.name))
+    return backup_id
 
 def restore_backup(backup_id):
-    backup_path = BACKUP_DIR / backup_id
-    if not backup_path.exists():
-        return False, f"备份 {backup_id} 不存在"
-    for f in backup_path.iterdir():
+    bp = BACKUP_DIR / backup_id
+    if not bp.exists():
+        return False, f"backup {backup_id} not found"
+    for f in bp.iterdir():
         dest = PROJECT_ROOT / f.name
         shutil.copy2(str(f), str(dest))
-    return True, f"已从 {backup_id} 恢复"
+    return True, f"restored from {backup_id}"
 
-def record_cognition(cid, text, value_score, effort_hours, risk_level,
-                      decision, files_changed, success=True):
+def git_snapshot(msg=""):
+    try:
+        subprocess.run(['git', 'add', '-A'], cwd=PROJECT_ROOT,
+                       capture_output=True, timeout=10)
+        r = subprocess.run(['git', 'commit', '--allow-empty', '-m',
+                            msg or f'bkp {datetime.datetime.now().strftime("%H%M%S")}'],
+                           cwd=PROJECT_ROOT, capture_output=True, timeout=10, text=True)
+        return r.stdout.strip()[:60]
+    except:
+        return 'git snap failed'
+
+# ============================================
+# 记录系统
+# ============================================
+
+def record_cognition(cid, text, vs=0, eh=0, rl='low', decision='defer',
+                      files=None, ok=True, note=''):
     ts = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
-    status = '[OK]' if success else '[FAIL]'
+    st = '[OK]' if ok else '[FAIL]'
+    files = files or []
     entry = f"""
-### {cid} ({ts})
-- **洞见**: {text}
-- **价值**: {value_score}/10 | **工时**: {effort_hours}h | **风险**: {risk_level}
-- **决策**: {decision} | **状态**: {status}
-- **文件**: {', '.join(files_changed)}
-- **回退**: `python cognition_pipeline.py rollback {cid}`
-"""
+| {ts} | {cid} | {st} | v{vs} w{eh}h r{rl} | {text[:50]} | {' '.join(files)} |"""
     with open(COGNITION_DB, 'a', encoding='utf-8') as f:
         f.write(entry)
 
+def init_db():
+    if not COGNITION_DB.exists():
+        with open(COGNITION_DB, 'w', encoding='utf-8') as f:
+            f.write("""# 认知数据库
+
+## 锚点索引
+| 锚点 | 位置 | 状态 |
+|------|------|------|
+| SWA | granular/sleep_metrics.py | active |
+| narrative | granular/sleep_metrics.py | active |
+
+## 注入历史
+| 时间 | ID | 状态 | 评估 | 洞见 | 文件 |
+|------|----|------|------|------|------|
+""")
+
 # ============================================
-# 扫描待办
+# 待办系统
 # ============================================
 
 def scan_todo():
@@ -110,130 +103,127 @@ def scan_todo():
     with open(TODO_FILE, 'r', encoding='utf-8') as f:
         content = f.read()
     todos = []
-    current = {}
+    cur = {}
     for line in content.split('\n'):
-        line = line.strip()
-        if line.startswith('## '):
-            if current:
-                todos.append(current)
-            current = {'timestamp': line.replace('## ', '').strip()}
-        elif line.startswith('- **洞见**'):
-            current['insight'] = line.replace('- **洞见**: ', '').strip()
-        elif line.startswith('- **待做**'):
-            current['action'] = line.replace('- **待做**: ', '').strip()
-    if current:
-        todos.append(current)
+        ls = line.strip()
+        if ls.startswith('## '):
+            if cur: todos.append(cur)
+            cur = {'timestamp': ls.replace('## ', '')}
+        elif ls.startswith('- **洞见**'):
+            cur['insight'] = ls.replace('- **洞见**: ', '')
+        elif ls.startswith('- **待做**'):
+            cur['action'] = ls.replace('- **待做**: ', '')
+    if cur: todos.append(cur)
     return todos
 
-def remove_todo(insight_text):
-    """从待办移除已执行项"""
+def mark_todo_done(insight_substr):
     if not TODO_FILE.exists():
         return
     with open(TODO_FILE, 'r', encoding='utf-8') as f:
         lines = f.readlines()
-    # 找到并注释（不删除，保留历史）
     new_lines = []
-    skip = False
+    marking = False
     for line in lines:
-        if insight_text in line:
-            skip = True
+        if insight_substr in line and line.strip().startswith('-'):
             new_lines.append('<!-- ' + line.rstrip() + ' (DONE) -->\n')
-        elif skip and line.strip().startswith('-'):
+            marking = True
+        elif marking and line.strip().startswith('-'):
             new_lines.append('<!-- ' + line.rstrip() + ' -->\n')
         else:
-            skip = False
+            marking = False
             new_lines.append(line)
     with open(TODO_FILE, 'w', encoding='utf-8') as f:
         f.writelines(new_lines)
 
 # ============================================
-# CLI 命令
+# CLI
 # ============================================
 
 def cmd_status():
-    print(f"\n认知数据库: {COGNITION_DB}")
-    print(f"备份目录: {BACKUP_DIR}/")
-    print(f"待办文件: {TODO_FILE}")
+    init_db()
+    todos = scan_todo()
     with open(COGNITION_DB, 'r', encoding='utf-8') as f:
-        content = f.read()
-    executed = content.count('[OK]')
-    failed = content.count('[FAIL]')
-    print(f"\n统计: 已执行={executed} 失败={failed}")
+        db = f.read()
+    executed = db.count('[OK]')
+    failed = db.count('[FAIL]')
     backups = sorted(BACKUP_DIR.iterdir()) if BACKUP_DIR.exists() else []
-    if backups:
-        print(f"最近备份: {backups[-1].name}")
+    print(f"\n{'='*50}")
+    print(f"认知管道 v2")
+    print(f"{'='*50}")
+    print(f"已执行: {executed}  失败: {failed}  待办: {len(todos)}")
+    print(f"备份数: {len(backups)}")
+    if todos:
+        print(f"\n待办:")
+        for i, t in enumerate(todos, 1):
+            print(f"  [{i}] {t.get('timestamp','')}: {t.get('insight','?')[:60]}")
 
 def cmd_rollback(cid):
-    backup_id = None
     for b in sorted(BACKUP_DIR.iterdir()):
         if cid in b.name:
-            backup_id = b.name
-            break
-    if backup_id:
-        ok, msg = restore_backup(backup_id)
-        print(f"[{'OK' if ok else 'FAIL'}] {msg}")
-    else:
-        print(f"未找到 {cid} 的备份，尝试git...")
-        subprocess.run(['git', 'checkout', '--', '.'], cwd=PROJECT_ROOT)
-        print("git checkout 恢复完成")
+            ok, msg = restore_backup(b.name)
+            print(f"[{'OK' if ok else 'FAIL'}] {msg}")
+            return
+    print(f"未找到 {cid} 备份, 尝试 git checkout...")
+    subprocess.run(['git', 'checkout', '--', '.'], cwd=PROJECT_ROOT)
 
 def cmd_optimize():
+    """自迭代入口 - AI负责评估+选择+执行"""
+    init_db()
     todos = scan_todo()
     if not todos:
-        print("待办列表为空")
-        return []
-    print(f"发现 {len(todos)} 个待办:")
+        print("待办为空")
+        return
+
+    print(f"\n{'='*50}")
+    print(f"自迭代模式 - {len(todos)} 个待办")
+    print(f"{'='*50}\n")
+
     for i, t in enumerate(todos, 1):
-        print(f"  [{i}] {t.get('timestamp','')} | {t.get('insight','')[:60]}")
-    selected = os.environ.get('COGNITION_SELECTED', '')
-    if selected:
-        idx = int(selected) - 1
-        if 0 <= idx < len(todos):
-            t = todos[idx]
-            print(f"\n选择 [{selected}]: {t.get('insight','')[:60]}")
-            print("--- AI执行阶段 ---")
-            print("1. 备份涉及文件")
-            print("2. 修改代码")
-            print("3. 验证")
-            print("4. 更新认知数据库")
-            print("5. 从待办移除")
-            return [t]
-        else:
-            print(f"索引超出范围(1-{len(todos)})")
-    else:
-        print("\nAI: 请评估以上待办，选择一项执行。")
-        print("   设置环境变量 COGNITION_SELECTED=<序号> 选择任务")
-    return []
+        ins = t.get('insight', '?')
+        act = t.get('action', '')
+        print(f"  [{i}] {ins}")
+        print(f"       待做: {act}")
+        print()
 
-def cmd_eval(text):
-    print(f"\n{'='*60}")
-    print(f"评估: {text[:80]}")
-    print(f"{'='*60}")
-    print("(AI在此输出评估报告)")
+    print(f"{'='*50}")
+    print("AI 评估阶段:")
+    print("  评估每项: 价值(1-10) / 工时(h) / 风险 / 可行性")
+    print("  选择一项: 综合分析后选择")
+    print()
+    print("AI 执行阶段:")
+    print("  1. 备份涉及文件")
+    print("  2. 修改代码")
+    print("  3. 验证(语法+逻辑)")
+    print("  4. 回退失败 or 记录并完成")
+    print(f"{'='*50}")
 
-def cmd_run(text):
-    cmd_eval(text)
-    print("\n--- AI执行阶段 ---")
-    print("(AI在此执行修改)")
+def cmd_run_eval(text, do_run=False):
+    print(f"\n洞见: {text[:80]}")
+    print(f"{'='*50}")
+    print("评估报告(由AI填充):")
+    print("  价值: ?/10  工时: ?h  风险: ?")
+    print("  分析: ...")
+    print("  执行计划: ...")
+    if do_run:
+        print("\n--- 执行阶段 ---")
+        print("  备份 -> 改代码 -> 验证 -> 记录")
 
 # ============================================
 # 入口
 # ============================================
 
 if __name__ == '__main__':
-    action = sys.argv[1] if len(sys.argv) > 1 else 'help'
+    ac = sys.argv[1] if len(sys.argv) > 1 else 'help'
 
-    if action == 'status':
+    if ac == 'status':
         cmd_status()
-    elif action == 'rollback':
+    elif ac == 'rollback':
         cmd_rollback(sys.argv[2] if len(sys.argv) > 2 else 'last')
-    elif action == 'eval':
-        text = sys.argv[2] if len(sys.argv) > 2 else sys.stdin.read().strip()
-        cmd_eval(text)
-    elif action == 'run':
-        text = sys.argv[2] if len(sys.argv) > 2 else sys.stdin.read().strip()
-        cmd_run(text)
-    elif action == 'optimize':
+    elif ac == 'optimize':
         cmd_optimize()
+    elif ac == 'eval':
+        cmd_run_eval(sys.argv[2] if len(sys.argv) > 2 else sys.stdin.read().strip(), False)
+    elif ac == 'run':
+        cmd_run_eval(sys.argv[2] if len(sys.argv) > 2 else sys.stdin.read().strip(), True)
     else:
         print(__doc__)
