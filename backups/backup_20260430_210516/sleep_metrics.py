@@ -173,62 +173,43 @@ def sleep_quality_score(hypnogram: dict) -> dict:
     睡眠质量综合评分 (0-100)
     
     # COGNITION_ANCHOR[SWA]{score function based on sleep efficiency maximization | INJECTED[2026-04-30 20:42]: 突触重置效率比深睡时长更重要，SWA斜率才是新度量}
-    # OLD: longer N3 + higher efficiency = better (30+20 = 50pts)
+    # OLD: longer N3 + higher efficiency = better
     # MANIFESTO: target should be synaptic reset efficiency, not duration
-    # CHANGE: efficiency 30->20, added 'unloading_speed' 10pts (SWA proxy from audio)
+    # NEXT: when EEG available, add SWA rising slope > deep sleep absolute value
     
     评分维度:
-    1. 睡眠效率 (20分): 实际睡眠/总卧床时间（权重降低——效率不等同于休整质量）
+    1. 睡眠效率 (30分): 实际睡眠/总卧床时间
     2. 深睡比例 (20分): N3 占睡眠时间的比例
     3. REM 比例 (20分): REM 占睡眠时间的比例
     4. 睡眠连续性 (15分): WASO 时间
     5. 入睡速度 (15分): 睡眠潜伏期
-    6. 卸载速度 (10分): 突触重置效率的音频代理指标 (NEW)
     
     Returns: {total_score, dimensions: {...}, grade, ...}
     """
     s = hypnogram['summary']
     total_sleep = s['total_min'] - s['stage_min'].get('W', 0)
-    n_epochs = s.get('n_epochs', int(s.get('total_min', 480) * 2))
     
-    # 1. 睡眠效率 (20分) - 权重从30降到20
+    # 1. 睡眠效率 (30分)
     eff = s['sleep_efficiency_pct']
-    score_eff = min(20, max(0, (eff - 50) / 50 * 20))
+    score_eff = min(30, max(0, (eff - 50) / 50 * 30))
     
-    # 2. 深睡N3比例 (20分)
+    # 2. 深睡N3比例 (20分) 目标 15-25%
     n3_pct = s['stage_pct'].get('N3', 0)
     score_n3 = max(0, 20 - abs(n3_pct - 20) * 2) if total_sleep > 0 else 0
     
-    # 3. REM比例 (20分)
+    # 3. REM比例 (20分) 目标 20-25%
     rem_pct = s['stage_pct'].get('REM', 0)
     score_rem = max(0, 20 - abs(rem_pct - 22) * 1.5) if total_sleep > 0 else 0
     
-    # 4. 连续性 (15分)
+    # 4. 连续性 (15分) WASO 越少越好
     waso = s.get('waso_min', 0)
     score_waso = max(0, 15 - waso * 0.5)
     
-    # 5. 入睡速度 (15分)
+    # 5. 入睡速度 (15分) 潜伏期 <30min
     latency = s.get('sleep_latency_min', 0)
     score_lat = max(0, min(15, 15 - latency * 0.5))
     
-    # 6. 卸载速度 (10分) NEW - SWA斜率的代理
-    # 用 N3过渡陡度 + 前半夜N3占比 估算突触重置效率
-    # 前半夜（前1/3）的N3占比越高且连续，突触重置效率越好
-    granules = hypnogram.get('granules', [])
-    first_third_epochs = max(n_epochs // 3, 1)
-    first_n3_min = sum(g['duration_min'] for g in granules 
-                       if g['stage'] == 'N3' and g['start_epoch'] < first_third_epochs)
-    later_n3_min = sum(g['duration_min'] for g in granules 
-                       if g['stage'] == 'N3' and g['start_epoch'] >= first_third_epochs)
-    total_n3 = first_n3_min + later_n3_min
-    if total_n3 > 0:
-        front_load_ratio = first_n3_min / total_n3  # 前1/3占N3比例
-        # 理想：前半夜集中50-70%的N3 = 陡升缓降
-        score_unload = max(0, 10 - abs(front_load_ratio - 0.6) * 20)
-    else:
-        score_unload = 0
-    
-    total = score_eff + score_n3 + score_rem + score_waso + score_lat + score_unload
+    total = score_eff + score_n3 + score_rem + score_waso + score_lat
     
     if total >= 85: grade = '优秀'
     elif total >= 70: grade = '良好'
@@ -244,6 +225,5 @@ def sleep_quality_score(hypnogram: dict) -> dict:
             'REM': round(score_rem, 1),
             'continuity': round(score_waso, 1),
             'sleep_latency': round(score_lat, 1),
-            'unloading_speed': round(score_unload, 1),
         }
     }

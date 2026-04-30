@@ -43,3 +43,10 @@
 |------|------|------|
 
 | 2026-04-30 20:42 | 🧪 已注入代码 | 突触重置效率比深睡时长更重要，SWA斜率才是新度量... |
+
+### SWA_WEIGHT_REFACTOR (2026-04-30 21:06)
+- **洞见**: 突触重置效率比深睡时长更重要，SWA斜率才是新度量
+- **价值**: 8/10 | **工时**: 0.5h | **风险**: low
+- **决策**: execute | **状态**: [OK]
+- **文件**: granular/sleep_metrics.py
+- **回退**: `python cognition_pipeline.py rollback SWA_WEIGHT_REFACTOR`
