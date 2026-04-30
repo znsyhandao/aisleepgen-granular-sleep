@@ -235,14 +235,9 @@ def sleep_quality_score(hypnogram: dict) -> dict:
     elif total >= 50: grade = '一般'
     else: grade = '需要关注'
     
-    # COGNITION_ANCHOR[narrative]{old: return numeric score | INJECTED[NARRATIVE]: add narrative output}
-    # generate_narrative: 将数字评分映射为有温度的叙述文本
-    narrative = _generate_narrative(total, grade, eff, score_unload, n3_pct, waso, latency, s)
-    
     return {
         'total_score': round(total, 1),
         'grade': grade,
-        'narrative': narrative,
         'dimensions': {
             'sleep_efficiency': round(score_eff, 1),
             'deep_sleep_N3': round(score_n3, 1),
@@ -252,57 +247,3 @@ def sleep_quality_score(hypnogram: dict) -> dict:
             'unloading_speed': round(score_unload, 1),
         }
     }
-
-
-# COGNITION_ANCHOR[narrative]{narrative generation}
-def _generate_narrative(total, grade, eff, unload, n3_pct, waso, latency, summary):
-    """将睡眠评分转化为有温度的叙述文本"""
-    
-    # 找出亮眼和待改善的维度
-    dims = [
-        ('效率', eff, 80, '躺在床上大部分时间都在真正休息'),
-        ('卸荷速度', unload * 10, 5, '大脑清理效率高'),
-        ('深睡', n3_pct, 20, '深睡比例充足'),
-        ('连续', waso, 30, '整晚睡得比较连贯'),
-    ]
-    highlights = [d for d in dims if d[1] >= d[2]]
-    concerns = [d for d in dims if d[1] < d[2] / 2]
-    
-    lines = []
-    
-    # 总评
-    if total >= 80:
-        lines.append('你的身体和大脑昨晚合作得很好。')
-    elif total >= 60:
-        lines.append('昨晚还算不错，有一些可以提升的地方。')
-    else:
-        lines.append('昨晚可能不太轻松，身体需要更好的休整机会。')
-    
-    # 亮点维度
-    if highlights:
-        best = max(highlights, key=lambda x: x[1])
-        lines.append(f'其中「{best[0]}」表现突出：{best[3]}。')
-    
-    # 卸荷速度叙事（核心）
-    if unload >= 6:
-        lines.append('尤其值得关注的是，你前半夜的深睡集中度很好——大脑在睡眠初期高效地完成了「突触清理」，相当于把一整天积累的神经负荷趁早卸载了。')
-    elif unload >= 3:
-        lines.append('前半夜的深睡有一定集中度，大脑的清理工作在正常进行。')
-    else:
-        lines.append('深睡分布比较分散，大脑可能没有获得足够集中的自我清理时间。')
-    
-    # 入睡速度
-    if latency > 60:
-        lines.append('入睡用了较长时间，可能需要调整睡前的放松节奏。')
-    elif latency > 30:
-        lines.append('入睡不算快，但还在正常范围。')
-    else:
-        lines.append('入睡速度不错，说明睡前状态比较放松。')
-    
-    # 结尾
-    if total >= 70:
-        lines.append('继续保持，你做得很好。')
-    else:
-        lines.append('今晚试试提前半小时放下手机，做些温和的放松练习。')
-    
-    return '\n'.join(lines)
