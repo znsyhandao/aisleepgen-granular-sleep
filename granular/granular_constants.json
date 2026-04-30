@@ -1,0 +1,20 @@
+{
+  "score": 57.5,
+  "grade": "\u4e00\u822c",
+  "estimated": {
+    "sleep_efficiency_pct": 100.0,
+    "n3_pct": 0.0,
+    "rem_pct": 100.0,
+    "waso_est_min": 0.0,
+    "latency_est_min": 5
+  },
+  "predicted_stage": "REM",
+  "confidence": 1.0,
+  "stage_probs": {
+    "W": 0.0,
+    "N1": 0.0,
+    "N2": 0.0,
+    "N3": 0.0,
+    "REM": 1.0
+  }
+}
