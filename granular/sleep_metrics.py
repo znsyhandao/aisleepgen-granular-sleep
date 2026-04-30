@@ -172,6 +172,11 @@ def sleep_quality_score(hypnogram: dict) -> dict:
     """
     睡眠质量综合评分 (0-100)
     
+    # COGNITION_ANCHOR[SWA]{score function based on sleep efficiency maximization | INJECTED[2026-04-30 20:42]: 突触重置效率比深睡时长更重要，SWA斜率才是新度量}
+    # OLD: longer N3 + higher efficiency = better
+    # MANIFESTO: target should be synaptic reset efficiency, not duration
+    # NEXT: when EEG available, add SWA rising slope > deep sleep absolute value
+    
     评分维度:
     1. 睡眠效率 (30分): 实际睡眠/总卧床时间
     2. 深睡比例 (20分): N3 占睡眠时间的比例
