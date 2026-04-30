@@ -1,0 +1,12 @@
+{
+  "n": 45,
+  "n1_recall_mean": 0.1905,
+  "n1_recall_median": 0.1433,
+  "n1_prec_mean": 0.2708,
+  "n1_f1_mean": 0.1828,
+  "acc_mean": 0.8709,
+  "details": [
+    {
+      "subject": "SC4001",
+      "n_epochs": 2650,
+      "n1_total": 
