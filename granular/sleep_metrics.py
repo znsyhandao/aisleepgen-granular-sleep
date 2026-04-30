@@ -255,7 +255,7 @@ def sleep_quality_score(hypnogram: dict) -> dict:
 
 
 # COGNITION_ANCHOR[narrative]{narrative generation}
-def _generate_narrative(total, grade, eff, unload, n3_pct, waso, latency, summary):
+def generate_narrative(total, grade, eff, unload, n3_pct, waso, latency, summary):
     """将睡眠评分转化为有温度的叙述文本"""
     
     # 找出亮眼和待改善的维度
