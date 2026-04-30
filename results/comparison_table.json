@@ -1,0 +1,19 @@
+{
+  "n_subjects": 151,
+  "mean_accuracy_pct": 81.1,
+  "std_accuracy_pct": 12.3,
+  "mean_recalls_pct": {
+    "W": 92.2,
+    "N1": 22.9,
+    "N2": 78.1,
+    "N3": 38.3,
+    "REM": 53.0
+  },
+  "std_recalls_pct": {
+    "W": 11.3,
+    "N1": 21.0,
+    "N2": 19.9,
+    "N3": 39.6,
+    "REM": 33.3
+  }
+}

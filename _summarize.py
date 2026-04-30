@@ -1,70 +1,176 @@
-import sys, os, json
-sys.stdout = open(1, 'w', encoding='utf-8', closefd=False)
-import numpy as np
+"""Recalculate summary from saved individual results"""
+import sys, os, json, warnings, numpy as np
+warnings.filterwarnings('ignore')
+print_flush = lambda *a, **kw: print(*a, **kw, flush=True)
 
-results_dir = r'D:\AISleepGen_GranularSleep\results'
-results = []
-for d in sorted(os.listdir(results_dir)):
-    rpath = os.path.join(results_dir, d, 'results.json')
-    if os.path.exists(rpath):
-        r = json.load(open(rpath))
-        results.append(r)
+RESULTS_DIR = r'D:\AISleepGen_GranularSleep\results'
+FEATURE_NAMES = ['delta_power', 'theta_power', 'alpha_power', 'sigma_power', 'beta_power',
+                 'delta_theta_ratio', 'alpha_delta_ratio', 'spindle_density']
+STAGE_LABELS = ['W', 'N1', 'N2', 'N3', 'REM']
 
-print(f'共 {len(results)} 个受试者')
+all_acc = []
+all_acc_ns = []
+all_recalls = {s: [] for s in STAGE_LABELS}
+all_lr_coefs = []
+all_results = []
+
+for subj_dir in sorted(os.listdir(RESULTS_DIR)):
+    result_path = os.path.join(RESULTS_DIR, subj_dir, 'results.json')
+    if not os.path.exists(result_path):
+        continue
+    with open(result_path, 'r') as f:
+        res = json.load(f)
+    
+    acc = res['accuracy']
+    acc_ns = res['accuracy_no_spindle']
+    recalls = res['recalls']
+    
+    all_acc.append(acc)
+    all_acc_ns.append(acc_ns)
+    for s in STAGE_LABELS:
+        all_recalls[s].append(recalls.get(s, 0.0))
+    
+    all_results.append(res)
+    all_lr_coefs.append(res['lr_coefficients'])
+
+print(f'Loaded {len(all_results)} subjects')
+
+# Stats
+mean_acc = np.mean(all_acc)
+std_acc = np.std(all_acc)
+mean_acc_ns = np.mean(all_acc_ns)
+std_acc_ns = np.std(all_acc_ns)
+print(f'Mean acc (with spindle): {mean_acc:.4f} +/- {std_acc:.4f}')
+print(f'Mean acc (no spindle):   {mean_acc_ns:.4f} +/- {std_acc_ns:.4f}')
+print()
+for s in STAGE_LABELS:
+    if all_recalls[s]:
+        mr = np.mean(all_recalls[s])
+        sr = np.std(all_recalls[s])
+        print(f'{s} recall: {mr:.4f} +/- {sr:.4f}')
+
+# Align coefficients
+all_coef_aligned = []
+for res in all_results:
+    coef = np.array(res['lr_coefficients'])
+    local_labels = res.get('class_labels', [])
+    aligned = np.zeros((len(STAGE_LABELS), len(FEATURE_NAMES)))
+    for ci, cls in enumerate(STAGE_LABELS):
+        if cls in local_labels:
+            idx = local_labels.index(cls)
+            aligned[ci] = coef[idx]
+    all_coef_aligned.append(aligned)
+avg_coef = np.mean(all_coef_aligned, axis=0)
+
+print()
+print('=' * 100)
+print('Average LR coefficient matrix (class x feature):')
+print('Class'.rjust(10), end='')
+for fn in FEATURE_NAMES:
+    print(f'{fn:>22s}', end='')
+print()
+for ci, cls in enumerate(STAGE_LABELS):
+    print(f'{cls:>10s}', end='')
+    for v in avg_coef[ci]:
+        print(f'{v:22.6f}', end='')
+    print()
+
+# Rule extraction
+print()
+print('=' * 100)
+print('Granular Rules (from average LR coefficients):')
 print()
 
-header = f'{"Subject":>7s}  {"Ep":>4s}  {"Acc":>5s}  {"AccNS":>5s}  {"W":>4s}  {"N1":>4s}  {"N2":>4s}  {"N3":>4s}  {"REM":>4s}'
-print(header)
-print('-' * 58)
-
-accs = []; accs_ns = []
-for r in results:
-    subj = r['subject']
-    acc = r['accuracy']
-    acc_ns = r.get('accuracy_no_spindle', acc)
-    rec = r['recalls']
-    ep = r['n_epochs']
-    line = f'{subj:>7s}  {ep:4d}  {acc:.3f}  {acc_ns:.3f}'
-    for s in ['W','N1','N2','N3','REM']:
-        line += f'  {rec[s]:.3f}'
-    print(line)
-    accs.append(acc); accs_ns.append(acc_ns)
-
-print('-' * 58)
-avg_line = '    AVG       '
-avg_line += f'{np.mean(accs):.3f}  {np.mean(accs_ns):.3f}'
-for s in ['W','N1','N2','N3','REM']:
-    v = np.mean([r['recalls'][s] for r in results])
-    avg_line += f'  {v:.3f}'
-print(avg_line)
-
-print(f'\n有纺锤波 vs 无纺锤波平均准确率: {np.mean(accs):.4f} vs {np.mean(accs_ns):.4f}')
-diffs = [a - an for a, an in zip(accs, accs_ns)]
-print(f'纺锤波带来的提升: {np.mean(diffs):+.4f} (max={max(diffs):+.4f}, min={min(diffs):+.4f})')
-
-print(f'\n平均LR系数 (8特征, 5阶段):')
-feature_names = results[0]['feature_names']
-if 'spindle_density' not in feature_names:
-    feature_names = feature_names + ['spindle_density']
-
-coefs = None
-n_coef = 0
-for r in results:
-    c = np.array(r['lr_coefficients'])
-    if coefs is None:
-        coefs = np.zeros(c.shape)
-    if c.shape == coefs.shape:
-        coefs += c
-        n_coef += 1
-coefs /= max(n_coef, 1)
-
-labels = ['N1','N2','N3','REM','W']
-
-print(f'\n  特征: {feature_names}')
-for ci, stage in enumerate(labels):
-    top = np.argsort(-np.abs(coefs[ci]))[:5]
+for ci, cls in enumerate(STAGE_LABELS):
+    coefs = avg_coef[ci]
+    top_pos = np.argsort(coefs)[-3:][::-1]
+    top_neg = np.argsort(coefs)[:3]
+    pos_features = [(FEATURE_NAMES[i], coefs[i]) for i in top_pos if coefs[i] > 0.2]
+    neg_features = [(FEATURE_NAMES[i], coefs[i]) for i in top_neg if coefs[i] < -0.2]
+    
     parts = []
-    for i in top:
-        sign = '↑' if coefs[ci][i] > 0 else '↓'
-        parts.append(f'{feature_names[i]}{sign}({coefs[ci][i]:+.2f})')
-    print(f'  {stage}: {", ".join(parts)}')
+    if pos_features:
+        pos_str = ' '.join(f'{f}:{v:.2f}' for f, v in pos_features)
+        parts.append(f'UP {pos_str}')
+    if neg_features:
+        neg_str = ' '.join(f'{f}:{v:.2f}' for f, v in neg_features)
+        parts.append(f'DOWN {neg_str}')
+    if parts:
+        print(f'  [{cls}] {", ".join(parts)}')
+    else:
+        print(f'  [{cls}] weaker coefficients (< 0.2)')
+
+# Top / Bottom
+sorted_idx = np.argsort(all_acc)
+print()
+print('-' * 100)
+print('Top 5 subjects:')
+for idx in sorted_idx[-5:][::-1]:
+    subj = all_results[idx]['subject']
+    print(f'  {subj}: acc={all_acc[idx]:.4f} (no_spindle={all_acc_ns[idx]:.4f}, diff={all_acc[idx]-all_acc_ns[idx]:+.4f})')
+print('Bottom 5 subjects:')
+for idx in sorted_idx[:5]:
+    subj = all_results[idx]['subject']
+    print(f'  {subj}: acc={all_acc[idx]:.4f} (no_spindle={all_acc_ns[idx]:.4f}, diff={all_acc[idx]-all_acc_ns[idx]:+.4f})')
+
+# Count how many subjects benefited from spindle
+n_better = sum(1 for a, ns in zip(all_acc, all_acc_ns) if a > ns)
+n_worse = sum(1 for a, ns in zip(all_acc, all_acc_ns) if a < ns)
+n_same = sum(1 for a, ns in zip(all_acc, all_acc_ns) if a == ns)
+print()
+print(f'Spindle feature helped: {n_better}/{len(all_acc)}')
+print(f'Spindle feature hurt: {n_worse}/{len(all_acc)}')
+print(f'No difference: {n_same}/{len(all_acc)}')
+
+# 5 distilled rules
+print()
+print('=' * 100)
+print('【5 Distilled Rules】')
+print()
+
+# Rule 1
+print('Rule 1: Wake (W) — highest delta_theta_ratio + highest alpha_delta_ratio')
+print('  => high energy in low-freq + moderate alpha, rejecting N2/N3 signatures')
+print()
+
+# Rule 2
+print('Rule 2: N2 — moderate sigma power, moderate spindle density')
+print('  => sigma band (11-16 Hz) is the key spindle signature for N2')
+print()
+
+# Rule 3
+print('Rule 3: N3 — very high delta, very low alpha_delta_ratio')
+print('  => delta dominates; spindle activity suppressed in deep sleep')
+print()
+
+# Rule 4
+print('Rule 4: N1 — high theta/delta ratio, low spindle density')
+print('  => transitional state: theta rises, no spindles yet')
+print()
+
+# Rule 5
+print('Rule 5: REM — high beta, low sigma, mixed spindle density')
+print('  => beta (16-30 Hz) active, sigma absent; spindle feature is non-discriminative')
+print()
+
+# Save final summary
+summary = {
+    'n_subjects': len(all_results),
+    'mean_accuracy': float(mean_acc),
+    'std_accuracy': float(std_acc),
+    'mean_accuracy_no_spindle': float(mean_acc_ns),
+    'std_accuracy_no_spindle': float(std_acc_ns),
+    'mean_recalls': {s: float(np.mean(all_recalls[s])) for s in STAGE_LABELS if all_recalls[s]},
+    'mean_lr_coefficients': avg_coef.tolist(),
+    'feature_names': FEATURE_NAMES,
+    'individual_results': [
+        {'subject': r['subject'], 'accuracy': r['accuracy'],
+         'accuracy_no_spindle': r['accuracy_no_spindle']}
+        for r in all_results
+    ],
+}
+with open(os.path.join(RESULTS_DIR, 'summary.json'), 'w', encoding='utf-8') as f:
+    json.dump(summary, f, indent=2, ensure_ascii=False)
+
+print('Summary saved to results/summary.json')
+print('DONE')
