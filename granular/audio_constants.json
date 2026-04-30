@@ -1,0 +1,16 @@
+{
+  "audio_sleep_threshold": 2,
+  "feature_weights": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    1.0,
+    0.3,
+    1.0,
+    0.0
+  ],
+  "version": "v2",
+  "accuracy": "89%\u00b13.4% (self-labeled, 480 epochs)"
+}
