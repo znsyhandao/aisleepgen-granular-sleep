@@ -18,6 +18,21 @@ from typing import Dict, List, Tuple
 
 STAGES = ['W', 'N1', 'N2', 'N3', 'REM']
 
+# 子epoch N1检测（30秒子窗口分析）
+_SUBEPOCH_ENABLED = False  # 由外部set_subepoch_data启用
+_SUBEPOCH_DATA = None
+_SUBEPOCH_SFREQ = None
+
+
+def set_subepoch_data(data, sfreq):
+    """设置子epoch分析的原始EEG数据"""
+    global _SUBEPOCH_DATA, _SUBEPOCH_SFREQ, _SUBEPOCH_ENABLED
+    _SUBEPOCH_DATA = data
+    _SUBEPOCH_SFREQ = sfreq
+    _SUBEPOCH_ENABLED = True
+
+
+
 # 睡眠生理约束
 VALID_TRANSITIONS = {
     'W': ['N1', 'REM'],                    # W → N1 (入睡) 或 W → REM (反常)
@@ -101,6 +116,27 @@ class GranularSleepStager:
             if base_conf[i] < LOW_CONF and not n1_mask[i]:
                 stages[i] = lr_classes[np.argmax(smoothed[i])]
                 confidences[i] = np.max(smoothed[i])
+        
+                # [L3] 子epoch N1精炼：对低置信W/N2做子窗口分析
+        if _SUBEPOCH_ENABLED and _SUBEPOCH_DATA is not None:
+            try:
+                from .subepoch_n1 import sub_epoch_variance_features as sub_epoch_features, detect_n1_subepoch_v2 as detect_n1_in_epoch
+                epoch_samples = int(_SUBEPOCH_SFREQ * 30)
+                for i in range(n):
+                    if stages[i] in ('W', 'N2') and base_conf[i] < 0.6:
+                        seg_start = i * epoch_samples
+                        seg_end = min((i + 1) * epoch_samples, len(_SUBEPOCH_DATA))
+                        data_seg = _SUBEPOCH_DATA[seg_start:seg_end]
+                        if len(data_seg) > epoch_samples * 0.8:
+                            sub_feats = sub_epoch_features(data_seg, _SUBEPOCH_SFREQ, epoch_samples)
+                            n1_ratio = detect_n1_in_epoch(sub_feats)
+                # v2 detect_n1_subepoch_v2
+                            if n1_ratio >= 0.33:  # 至少1/3子窗口显示N1
+                                stages[i] = 'N1'
+            except ImportError:
+                pass
+            except Exception as e:
+                pass
         
         # Step 3: 信息粒构建
         granules = self._build_granules(stages, confidences, min_granule_epochs)
